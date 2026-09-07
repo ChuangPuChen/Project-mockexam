@@ -19963,7 +19963,9 @@ function selectAnswer(i){
     answers[current]=[i];
   }
   pendingSubmitConfirm=false;
+  const scrollY=window.scrollY;
   render();
+  window.scrollTo(0,scrollY);
 }
 function prevQ(){ if(current>0){current--; pendingSubmitConfirm=false; render();} }
 function nextQ(){ if(current<sessionQuestions.length-1){current++; pendingSubmitConfirm=false; render();} }

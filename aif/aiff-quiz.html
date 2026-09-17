@@ -1,0 +1,2219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>AWS AIF-C01 模擬考</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AIF模擬考">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0d0d0f">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+  :root{
+    --bg:#0d0d0f;
+    --panel:#161618;
+    --panel-border:#2a2a2d;
+    --orange:#ff7a1a;
+    --orange-dim:#c95f0f;
+    --text:#eceae6;
+    --text-dim:#9a9691;
+    --green:#3ac16a;
+    --red:#e8503f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:calc(32px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) calc(60px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
+  }
+  .wrap{width:100%;max-width:760px;}
+
+  /* ---- fixed app-shell layout while answering (no page scroll) ---- */
+  body.quiz-mode{
+    height:100dvh;
+    overflow:hidden;
+    padding:calc(10px + env(safe-area-inset-top)) calc(14px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(14px + env(safe-area-inset-left));
+  }
+  body.quiz-mode .wrap{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+  }
+  .quiz-top{flex:0 0 auto;}
+  .quiz-scroll{
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
+    padding:14px 0 10px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .quiz-bottom{flex:0 0 auto;}
+
+  .jumpbtn{
+    background:#1c1c1f;border:1px solid var(--panel-border);color:var(--orange);
+    font-size:12px;font-weight:700;padding:5px 12px;border-radius:6px;
+    flex:0 0 auto;
+  }
+  header .progress{
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+
+  .jumpdrawer-backdrop{
+    position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:50;
+    display:flex;align-items:flex-end;justify-content:center;
+  }
+  .jumpdrawer{
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:16px 16px 0 0;
+    width:100%;max-width:760px;
+    padding:18px 18px calc(18px + env(safe-area-inset-bottom));
+    max-height:70vh;overflow-y:auto;
+  }
+  .jumpdrawer-head{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:14px;font-weight:700;font-size:14px;
+  }
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    border-bottom:1px solid var(--panel-border);
+    padding-bottom:14px;
+    margin-bottom:24px;
+  }
+  header h1{
+    font-size:19px;
+    font-weight:600;
+    margin:0;
+    letter-spacing:.3px;
+  }
+  header h1 span{color:var(--orange);}
+  header .progress{font-size:13px;color:var(--text-dim);font-variant-numeric:tabular-nums;}
+
+  .track{
+    height:3px;background:var(--panel-border);border-radius:2px;margin-bottom:28px;overflow:hidden;
+  }
+  .track-fill{height:100%;background:var(--orange);transition:width .25s ease;}
+
+  .qcard{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius:10px;
+    padding:26px 26px 22px;
+  }
+  .qnum{
+    color:var(--orange);
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:10px;
+    letter-spacing:.4px;
+  }
+  .qtext{
+    font-size:16px;
+    line-height:1.7;
+    margin-bottom:22px;
+    white-space:pre-wrap;
+  }
+  .options{display:flex;flex-direction:column;gap:10px;}
+  .opt{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    text-align:left;
+    background:#1c1c1f;
+    border:1px solid var(--panel-border);
+    border-radius:8px;
+    padding:13px 16px;
+    color:var(--text);
+    font-size:14.5px;
+    line-height:1.6;
+    cursor:pointer;
+    transition:border-color .15s, background .15s;
+  }
+  .opt:hover{border-color:var(--orange-dim);}
+  .opt.selected{
+    border-color:var(--orange);
+    background:#241a10;
+  }
+  .opt .tag{
+    flex:0 0 auto;
+    width:24px;height:24px;
+    border-radius:6px;
+    border:1px solid var(--panel-border);
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;color:var(--text-dim);
+  }
+  .opt.selected .tag{border-color:var(--orange);color:var(--orange);}
+
+  /* review mode coloring */
+  .opt.correct{border-color:var(--green);background:#122318;}
+  .opt.correct .tag{border-color:var(--green);color:var(--green);}
+  .opt.wrong{border-color:var(--red);background:#2a1512;}
+  .opt.wrong .tag{border-color:var(--red);color:var(--red);}
+
+  .navrow{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:24px;
+  }
+  .navrow .left, .navrow .right{display:flex;gap:10px;}
+  button{
+    font-family:inherit;
+    font-size:14px;
+    font-weight:600;
+    border-radius:7px;
+    padding:11px 20px;
+    cursor:pointer;
+    border:1px solid var(--panel-border);
+    background:#1c1c1f;
+    color:var(--text);
+    transition:opacity .15s, border-color .15s;
+  }
+  button:disabled{opacity:.35;cursor:not-allowed;}
+  button:not(:disabled):hover{border-color:var(--orange-dim);}
+  .btn-primary{
+    background:var(--orange);
+    border-color:var(--orange);
+    color:#171008;
+  }
+  .btn-primary:not(:disabled):hover{opacity:.9;border-color:var(--orange);}
+
+  .jumpgrid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:22px;
+  }
+  .jumpgrid button{
+    width:34px;height:34px;padding:0;
+    font-size:12px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .jumpgrid button.answered{border-color:var(--orange-dim);color:var(--orange);}
+  .jumpgrid button.current{background:var(--orange);color:#171008;border-color:var(--orange);}
+
+  /* results screen */
+  .results{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius:10px;
+    padding:32px 28px;
+    text-align:center;
+  }
+  .score-num{font-size:52px;font-weight:700;color:var(--orange);line-height:1;}
+  .score-sub{color:var(--text-dim);font-size:14px;margin-top:8px;}
+  .score-bar{
+    height:8px;background:#1c1c1f;border-radius:4px;overflow:hidden;margin:22px 0;
+    border:1px solid var(--panel-border);
+  }
+  .score-bar-fill{height:100%;background:var(--orange);}
+  .reviewlist{margin-top:28px;text-align:left;display:flex;flex-direction:column;gap:14px;}
+  .review-item{
+    border:1px solid var(--panel-border);
+    border-radius:8px;
+    padding:16px 18px;
+    background:#1c1c1f;
+  }
+  .review-item .rhead{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;font-weight:700;margin-bottom:8px;letter-spacing:.3px;
+  }
+  .rhead.correct{color:var(--green);}
+  .rhead.wrong{color:var(--red);}
+  .review-item .rq{font-size:14px;line-height:1.6;margin-bottom:10px;color:var(--text);}
+  .review-item .ropt{font-size:13px;line-height:1.6;padding:8px 10px;border-radius:6px;margin-bottom:6px;}
+  .review-item .ropt.correct{background:#122318;color:var(--green);}
+  .review-item .ropt.wrong{background:#2a1512;color:var(--red);}
+
+  .restart{margin-top:26px;}
+  .footnote{
+    color:var(--text-dim);font-size:12px;text-align:center;margin-top:28px;line-height:1.6;
+  }
+
+  /* timer */
+  .timer{
+    font-variant-numeric:tabular-nums;
+    font-size:15px;font-weight:700;color:var(--orange);
+    border:1px solid var(--orange-dim);
+    border-radius:7px;padding:6px 12px;
+  }
+  .timer.low{color:var(--red);border-color:var(--red);}
+  .headtop{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+
+  .langtoggle{
+    display:flex;gap:4px;background:#1c1c1f;border:1px solid var(--panel-border);
+    border-radius:7px;padding:3px;
+  }
+  .langtoggle button{
+    padding:6px 12px;font-size:12px;font-weight:700;border:none;border-radius:5px;
+    background:transparent;color:var(--text-dim);
+  }
+  .langtoggle button.active{background:var(--orange);color:#171008;}
+  .langtoggle button:hover:not(.active){border-color:transparent;color:var(--text);}
+
+  .multihint{font-size:12px;color:var(--orange);margin-bottom:14px;font-weight:600;}
+
+  .submitwarn{
+    margin-top:16px;
+    background:#2a1a10;
+    border:1px solid var(--orange-dim);
+    color:var(--orange);
+    border-radius:8px;
+    padding:11px 14px;
+    font-size:13px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .linklike{
+    background:none;border:none;color:var(--text-dim);
+    font-size:12px;text-decoration:underline;padding:0;cursor:pointer;
+  }
+  .linklike:hover{color:var(--text);border-color:transparent;}
+
+  /* checkbox / radio indicator swap */
+  .opt .tag.round{border-radius:50%;}
+
+  /* start screen */
+  .start-card{
+    background:var(--panel);border:1px solid var(--panel-border);border-radius:10px;
+    padding:36px 30px;text-align:center;
+  }
+  .start-card h2{margin:0 0 6px;font-size:20px;}
+  .start-card p{color:var(--text-dim);font-size:14px;margin:0 0 22px;line-height:1.7;}
+  .meta-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px;
+  }
+  .meta-box{
+    background:#1c1c1f;border:1px solid var(--panel-border);border-radius:8px;padding:14px 8px;
+  }
+  .meta-box .mnum{font-size:20px;font-weight:700;color:var(--orange);}
+  .meta-box .mlabel{font-size:12px;color:var(--text-dim);margin-top:4px;}
+
+  .rangepick{
+    text-align:left;margin-bottom:22px;
+  }
+  .rangepick label{
+    display:block;font-size:12px;color:var(--text-dim);margin-bottom:6px;font-weight:600;
+  }
+  .rangepick select{
+    width:100%;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:600;
+    color:var(--text);
+    background:#1c1c1f;
+    border:1px solid var(--panel-border);
+    border-radius:7px;
+    padding:11px 14px;
+    cursor:pointer;
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ff7a1a' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+  }
+  .rangepick select:focus{outline:none;border-color:var(--orange);}
+
+/* ===== 手機專用排版（窄螢幕加大字級與觸控範圍） ===== */
+@media (max-width: 700px){
+  body{ padding-left:calc(12px + env(safe-area-inset-left)); padding-right:calc(12px + env(safe-area-inset-right)); }
+
+  header{ flex-direction:column; align-items:flex-start; gap:10px; }
+  .headtop{ width:100%; }
+  header h1{ font-size:22px; }
+  header .progress{ font-size:14px; }
+  .timer{ font-size:17px; padding:8px 14px; }
+
+  .qcard{ padding:20px 16px 18px; border-radius:12px; }
+  .qnum{ font-size:14px; margin-bottom:12px; }
+  .qtext{ font-size:17px; line-height:1.85; margin-bottom:24px; }
+  .multihint{ font-size:14px; margin-bottom:16px; }
+
+  .options{ gap:12px; }
+  .opt{ padding:16px 16px; font-size:17px; line-height:1.75; gap:14px; border-radius:10px; }
+  .opt .tag{ width:30px; height:30px; font-size:14px; flex-shrink:0; }
+
+  .navrow{ flex-wrap:wrap; gap:12px; }
+  .navrow .left{ width:100%; gap:10px; }
+  .navrow .left button{ flex:1; }
+  .navrow .right{ width:100%; }
+  .navrow .right button{ width:100%; }
+  button{ font-size:16px; padding:14px 18px; }
+
+  .jumpgrid{ gap:8px; justify-content:center; }
+  .jumpgrid button{ width:42px; height:42px; font-size:14px; }
+
+  .submitwarn{ font-size:14px; padding:13px 14px; }
+
+  .start-card{ padding:28px 20px; }
+  .start-card h2{ font-size:22px; }
+  .start-card p{ font-size:15px; }
+  .rangepick select{ font-size:16px; padding:13px 14px; }
+  .meta-grid{ gap:10px; }
+  .meta-box{ padding:16px 8px; }
+  .meta-box .mnum{ font-size:24px; }
+  .meta-box .mlabel{ font-size:13px; }
+
+  .results{ padding:28px 20px; }
+  .score-num{ font-size:60px; }
+  .score-sub{ font-size:15px; }
+  .review-item{ padding:18px 16px; }
+  .review-item .rq{ font-size:15px; }
+  .review-item .ropt{ font-size:14px; padding:10px 12px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+// ---- 題庫資料：完整雙語題庫（來源：Examtopics AIF-C01） ----
+const QUESTIONS = [
+{
+  n:8,
+  type:"single",
+  q_en:"A company is building a solution to generate images for protective eyewear. The solution must have high accuracy and must minimize the risk of incorrect annotations. Which solution will meet these requirements?",
+  q_zh:"一家公司正在建立一個為防護眼鏡產生影像的解決方案。該解決方案必須具有高準確度，並且必須 將錯誤標註的風險降到最低。哪個解決方案符合這些需求？",
+  options_en:[
+    "Human-in-the-loop validation by using Amazon SageMaker Ground Truth Plus.",
+    "Data augmentation by using an Amazon Bedrock knowledge base.",
+    "Image recognition by using Amazon Rekognition.",
+    "Data summarization by using Amazon QuickSight Q.",
+  ],
+  options_zh:[
+    "使用 Amazon SageMaker Ground Truth Plus 進行人在迴圈中的驗證。",
+    "使用 Amazon Bedrock knowledge base 進行資料擴增。",
+    "使用 Amazon Rekognition 進行影像辨識。",
+    "使用 Amazon QuickSight Q 進行資料摘要。",
+  ],
+  answer:[0]
+},
+{
+  n:11,
+  type:"single",
+  q_en:"A company wants to build an ML model by using Amazon SageMaker. The company needs to share and manage variables for model development across multiple teams. Which SageMaker feature meets these requirements?",
+  q_zh:"一家公司想要使用 Amazon SageMaker 建置 ML 模型。該公司需要在多個團隊之間共享並管理模 型開發用的變數。哪項 SageMaker 功能符合這些需求？",
+  options_en:[
+    "Amazon SageMaker Feature Store.",
+    "Amazon SageMaker Data Wrangler.",
+    "Amazon SageMaker Clarify.",
+    "Amazon SageMaker Model Cards.",
+  ],
+  options_zh:[
+    "Amazon SageMaker Feature Store.",
+    "Amazon SageMaker Data Wrangler.",
+    "Amazon SageMaker Clarify.",
+    "Amazon SageMaker Model Cards.",
+  ],
+  answer:[0]
+},
+{
+  n:13,
+  type:"single",
+  q_en:"A financial institution is using Amazon Bedrock to develop an AI application. The application is hosted in a VPC. To meet regulatory compliance standards, the VPC is not allowed access to any internet traffic. Which AWS service or feature will meet these requirements?",
+  q_zh:"一家金融機構正在使用 Amazon Bedrock 開發 AI 應用程式。該應用程式託管在 VPC 中。為了符合 監管合規標準，該 VPC 不允許存取任何網際網路流量。哪項 AWS 服務或功能符合這些需求？",
+  options_en:[
+    "AWS PrivateLink.",
+    "Amazon Macie.",
+    "Amazon CloudFront.",
+    "Internet gateway.",
+  ],
+  options_zh:[
+    "AWS PrivateLink.",
+    "Amazon Macie.",
+    "Amazon CloudFront.",
+    "Internet gateway.",
+  ],
+  answer:[0]
+},
+{
+  n:16,
+  type:"single",
+  q_en:"A company is building a contact center application and wants to gain insights from customer conversations. The company wants to analyze and extract key information from the audio of the customer calls. Which solution meets these requirements?",
+  q_zh:"一家公司正在建置聯絡中心應用程式，並想要從客戶對話中取得洞察。該公司想要分析並擷取客戶 通話音訊中的關鍵資訊。哪個解決方案符合這些需求？",
+  options_en:[
+    "Build a conversational chatbot by using Amazon Lex.",
+    "Transcribe call recordings by using Amazon Transcribe.",
+    "Extract information from call recordings by using Amazon SageMaker Model Monitor.",
+    "Create classification labels by using Amazon Comprehend.",
+  ],
+  options_zh:[
+    "使用 Amazon Lex 建置對話式聊天機器人。",
+    "使用 Amazon Transcribe 轉錄通話錄音。",
+    "使用 Amazon SageMaker Model Monitor 從通話錄音中擷取資訊。",
+    "使用 Amazon Comprehend 建立分類標籤。",
+  ],
+  answer:[1]
+},
+{
+  n:26,
+  type:"single",
+  q_en:"A security company is using Amazon Bedrock to run foundation models (FMs). The company wants to ensure that only authorized users invoke the models. The company needs to identify any unauthorized access attempts to set appropriate AWS Identity and Access Management (IAM) policies and roles for future iterations of the FMs. Which AWS service should the company use to identify unauthorized users that are trying to access Amazon Bedrock?",
+  q_zh:"一家安全公司正在使用 Amazon Bedrock 執行基礎模型 (FM)。該公司想要確保只有授權使用者能 叫用模型。該公司需要識別任何未授權的存取嘗試，以便為未來版本的 FM 設定適當的 AWS Identi ty and Access Management (IAM) 政策和角色。該公司應使用哪項 AWS 服務來識別嘗試存取 Ama zon Bedrock 的未授權使用者？",
+  options_en:[
+    "AWS Audit Manager.",
+    "AWS CloudTrail.",
+    "Amazon Fraud Detector.",
+    "AWS Trusted Advisor.",
+  ],
+  options_zh:[
+    "AWS Audit Manager.",
+    "AWS CloudTrail.",
+    "Amazon Fraud Detector.",
+    "AWS Trusted Advisor.",
+  ],
+  answer:[1]
+},
+{
+  n:27,
+  type:"single",
+  q_en:"A company has developed an ML model for image classification. The company wants to deploy the model to production so that a web application can use the model. The company needs to implement a solution to host the model and serve predictions without managing any of the underlying infrastructure. Which solution will meet these requirements?",
+  q_zh:"一家公司已開發用於影像分類的 ML 模型。該公司想要將模型部署到生產環境，讓 Web 應用程式可 以使用該模型。該公司需要實作一個解決方案來託管模型並提供預測，而不需管理任何底層基礎設 施。哪個解決方案符合這些需求？",
+  options_en:[
+    "Use Amazon SageMaker Serverless Inference to deploy the model.",
+    "Use Amazon CloudFront to deploy the model.",
+    "Use Amazon API Gateway to host the model and serve predictions.",
+    "Use AWS Batch to host the model and serve predictions.",
+  ],
+  options_zh:[
+    "使用 Amazon SageMaker Serverless Inference 部署模型。",
+    "使用 Amazon CloudFront 部署模型。",
+    "使用 Amazon API Gateway 託管模型並提供預測。",
+    "使用 AWS Batch 託管模型並提供預測。",
+  ],
+  answer:[0]
+},
+{
+  n:28,
+  type:"single",
+  q_en:"An AI company periodically evaluates its systems and processes with the help of independent software vendors (ISVs). The company needs to receive email message notifications when an ISV's compliance reports become available. Which AWS service can the company use to meet this requirement?",
+  q_zh:"一家 AI 公司定期在獨立軟體供應商 (ISV) 的協助下評估其系統和流程。該公司需要在 ISV 的合規報 告可用時收到電子郵件通知。該公司可以使用哪項 AWS 服務來符合此需求？",
+  options_en:[
+    "AWS Audit Manager.",
+    "AWS Artifact.",
+    "AWS Trusted Advisor.",
+    "AWS Data Exchange.",
+  ],
+  options_zh:[
+    "AWS Audit Manager.",
+    "AWS Artifact.",
+    "AWS Trusted Advisor.",
+    "AWS Data Exchange.",
+  ],
+  answer:[1]
+},
+{
+  n:33,
+  type:"single",
+  q_en:"Which AWS service or feature can help an AI development team quickly deploy and consume a foundation model (FM) within the team's VPC?",
+  q_zh:"哪項 AWS 服務或功能可以協助 AI 開發團隊在團隊的 VPC 內快速部署並使用基礎模型 (FM)？",
+  options_en:[
+    "Amazon Personalize.",
+    "Amazon SageMaker JumpStart.",
+    "PartyRock, an Amazon Bedrock Playground.",
+    "Amazon SageMaker endpoints.",
+  ],
+  options_zh:[
+    "Amazon Personalize.",
+    "Amazon SageMaker JumpStart.",
+    "PartyRock, an Amazon Bedrock Playground.",
+    "Amazon SageMaker endpoints.",
+  ],
+  answer:[1]
+},
+{
+  n:39,
+  type:"single",
+  q_en:"A medical company is customizing a foundation model (FM) for diagnostic purposes. The company needs the model to be transparent and explainable to meet regulatory requirements. Which solution will meet these requirements?",
+  q_zh:"一家醫療公司正在為診斷用途自訂基礎模型 (FM)。該公司需要模型具備透明度和可解釋性，以符合 監管要求。哪個解決方案符合這些需求？",
+  options_en:[
+    "Configure the security and compliance by using Amazon Inspector.",
+    "Generate simple metrics, reports, and examples by using Amazon SageMaker Clarify.",
+    "Encrypt and secure training data by using Amazon Macie.",
+    "Gather more data. Use Amazon Rekognition to add custom labels to the data.",
+  ],
+  options_zh:[
+    "使用 Amazon Inspector 設定安全與合規。",
+    "使用 Amazon SageMaker Clarify 產生簡單指標、報告和範例。",
+    "使用 Amazon Macie 加密並保護訓練資料。",
+    "收集更多資料。使用 Amazon Rekognition 將自訂標籤新增至資料。",
+  ],
+  answer:[1]
+},
+{
+  n:54,
+  type:"single",
+  q_en:"A company wants to build an interactive application for children that generates new stories based on classic stories. The company wants to use Amazon Bedrock and needs to ensure that the results and topics are appropriate for children. Which AWS service or feature will meet these requirements?",
+  q_zh:"一家公司想要為兒童建置互動式應用程式，根據經典故事生成新故事。該公司想要使用 Amazon B edrock，並需要確保結果和主題適合兒童。哪項 AWS 服務或功能符合這些需求？",
+  options_en:[
+    "Amazon Rekognition.",
+    "Amazon Bedrock playgrounds.",
+    "Guardrails for Amazon Bedrock.",
+    "Agents for Amazon Bedrock.",
+  ],
+  options_zh:[
+    "Amazon Rekognition.",
+    "Amazon Bedrock playgrounds.",
+    "Guardrails for Amazon Bedrock.",
+    "Agents for Amazon Bedrock.",
+  ],
+  answer:[2]
+},
+{
+  n:61,
+  type:"single",
+  q_en:"An AI practitioner is using an Amazon Bedrock base model to summarize session chats from the customer service department. The AI practitioner wants to store invocation logs to monitor model input and output data. Which strategy should the AI practitioner use?",
+  q_zh:"一位 AI 從業人員正在使用 Amazon Bedrock 基礎模型，摘要來自客戶服務部門的工作階段聊天。 該 AI 從業人員想要儲存叫用日誌，以監控模型輸入和輸出資料。該 AI 從業人員應使用哪個策略？",
+  options_en:[
+    "Configure AWS CloudTrail as the logs destination for the model.",
+    "Enable invocation logging in Amazon Bedrock.",
+    "Configure AWS Audit Manager as the logs destination for the model.",
+    "Configure model invocation logging in Amazon EventBridge.",
+  ],
+  options_zh:[
+    "將 AWS CloudTrail 設定為模型的日誌目的地。",
+    "在 Amazon Bedrock 中啟用叫用記錄。",
+    "將 AWS Audit Manager 設定為模型的日誌目的地。",
+    "在 Amazon EventBridge 中設定模型叫用記錄。",
+  ],
+  answer:[1]
+},
+{
+  n:67,
+  type:"single",
+  q_en:"A medical company deployed a disease detection model on Amazon Bedrock. To comply with privacy policies, the company wants to prevent the model from including personal patient information in its responses. The company also wants to receive notification when policy violations occur. Which solution meets these requirements?",
+  q_zh:"一家醫療公司在 Amazon Bedrock 上部署了疾病偵測模型。為了遵守隱私政策，該公司想要防止模 型在回應中包含病患個人資訊。該公司也想要在發生政策違規時收到通知。哪個解決方案符合這些 需求？",
+  options_en:[
+    "Use Amazon Macie to scan the model's output for sensitive data and set up alerts for potential violations.",
+    "Configure AWS CloudTrail to monitor the model's responses and create alerts for any detected personal information.",
+    "Use Guardrails for Amazon Bedrock to filter content. Set up Amazon CloudWatch alarms for notification of policy violations.",
+    "Implement Amazon SageMaker Model Monitor to detect data drift and receive alerts when model quality degrades.",
+  ],
+  options_zh:[
+    "使用 Amazon Macie 掃描模型輸出中的敏感資料，並為潛在違規設定警示。",
+    "設定 AWS CloudTrail 監控模型回應，並為任何偵測到的個人資訊建立警示。",
+    "使用 Guardrails for Amazon Bedrock 篩選內容。設定 Amazon CloudWatch 警示以通知政策違 規。",
+    "實作 Amazon SageMaker Model Monitor 以偵測資料漂移，並在模型品質下降時收到警示。",
+  ],
+  answer:[2]
+},
+{
+  n:68,
+  type:"single",
+  q_en:"A company manually reviews all submitted resumes in PDF format. As the company grows, the company expects the volume of resumes to exceed the company's review capacity. The company needs an automated system to convert the PDF resumes into plain text format for additional processing. Which AWS service meets this requirement?",
+  q_zh:"一家公司手動審閱所有以 PDF 格式提交的履歷。隨著公司成長，公司預期履歷數量會超過公司的審 閱能力。該公司需要自動化系統將 PDF 履歷轉換為純文字格式，以便進一步處理。哪項 AWS 服務 符合此需求？",
+  options_en:[
+    "Amazon Textract.",
+    "Amazon Personalize.",
+    "Amazon Lex.",
+    "Amazon Transcribe.",
+  ],
+  options_zh:[
+    "Amazon Textract.",
+    "Amazon Personalize.",
+    "Amazon Lex.",
+    "Amazon Transcribe.",
+  ],
+  answer:[0]
+},
+{
+  n:74,
+  type:"single",
+  q_en:"A company wants to display the total sales for its top-selling products across various retail locations in the past 12 months. Which AWS solution should the company use to automate the generation of graphs?",
+  q_zh:"一家公司想要顯示過去 12 個月在各零售地點中最暢銷產品的總銷售額。該公司應使用哪個 AWS 解 決方案來自動生成圖表？",
+  options_en:[
+    "Amazon Q in Amazon EC2.",
+    "Amazon Q Developer.",
+    "Amazon Q in Amazon QuickSight.",
+    "Amazon Q in AWS Chatbot.",
+  ],
+  options_zh:[
+    "Amazon Q in Amazon EC2.",
+    "Amazon Q Developer.",
+    "Amazon Q in Amazon QuickSight.",
+    "Amazon Q in AWS Chatbot.",
+  ],
+  answer:[2]
+},
+{
+  n:99,
+  type:"single",
+  q_en:"A company wants to create a new solution by using AWS Glue. The company has minimal programming experience with AWS Glue. Which AWS service can help the company use AWS Glue?",
+  q_zh:"一家公司想要使用 AWS Glue 建立新解決方案。該公司對 AWS Glue 的程式撰寫經驗很少。哪項 A WS 服務可以協助該公司使用 AWS Glue？",
+  options_en:[
+    "Amazon Q Developer.",
+    "AWS Config.",
+    "Amazon Personalize.",
+    "Amazon Comprehend.",
+  ],
+  options_zh:[
+    "Amazon Q Developer.",
+    "AWS Config.",
+    "Amazon Personalize.",
+    "Amazon Comprehend.",
+  ],
+  answer:[0]
+},
+{
+  n:101,
+  type:"single",
+  q_en:"A company is developing an ML model to make loan approvals. The company must implement a solution to detect bias in the model. The company must also be able to explain the model's predictions. Which solution will meet these requirements?",
+  q_zh:"一家公司正在開發 ML 模型來做出貸款核准決策。公司必須實作一個解決方案來偵測模型中的偏差 。公司也必須能夠解釋模型的預測。哪個解決方案可以滿足這些需求？",
+  options_en:[
+    "Amazon SageMaker Clarify.",
+    "Amazon SageMaker Data Wrangler.",
+    "Amazon SageMaker Model Cards.",
+    "AWS AI Service Cards.",
+  ],
+  options_zh:[
+    "Amazon SageMaker Clarify。",
+    "Amazon SageMaker Data Wrangler。",
+    "Amazon SageMaker Model Cards。",
+    "AWS AI Service Cards。",
+  ],
+  answer:[0]
+},
+{
+  n:104,
+  type:"single",
+  q_en:"A company is using custom models in Amazon Bedrock for a generative AI application. The company wants to use a company managed encryption key to encrypt the model artifacts that the model customization jobs create. Which AWS service meets these requirements?",
+  q_zh:"一家公司正在 Amazon Bedrock 中為生成式 AI 應用程式使用自訂模型。公司想使用公司管理的加 密金鑰來加密模型自訂作業所建立的模型成品。哪個 AWS 服務符合這些需求？",
+  options_en:[
+    "AWS Key Management Service (AWS KMS).",
+    "Amazon Inspector.",
+    "Amazon Macie.",
+    "AWS Secrets Manager.",
+  ],
+  options_zh:[
+    "AWS Key Management Service (AWS KMS)。",
+    "Amazon Inspector。",
+    "Amazon Macie。",
+    "AWS Secrets Manager。",
+  ],
+  answer:[0]
+},
+{
+  n:110,
+  type:"single",
+  q_en:"A company is implementing intelligent agents to provide conversational search experiences for its customers. The company needs a database service that will support storage and queries of embeddings from a generative AI model as vectors in the database. Which AWS service will meet these requirements?",
+  q_zh:"一家公司正在實作智慧代理程式，為其客戶提供對話式搜尋體驗。公司需要一個資料庫服務，支援 將生成式 AI 模型的 embeddings 作為資料庫中的向量儲存和查詢。哪個 AWS 服務可以滿足這些需 求？",
+  options_en:[
+    "Amazon Athena.",
+    "Amazon Aurora PostgreSQL.",
+    "Amazon Redshift.",
+    "Amazon EMR.",
+  ],
+  options_zh:[
+    "Amazon Athena。",
+    "Amazon Aurora PostgreSQL。",
+    "Amazon Redshift。",
+    "Amazon EMR。",
+  ],
+  answer:[1]
+},
+{
+  n:112,
+  type:"single",
+  q_en:"A pharmaceutical company wants to analyze user reviews of new medications and provide a concise overview for each medication. Which solution meets these requirements? ？",
+  q_zh:"一家製藥公司想分析新藥的使用者評論，並為每種藥物提供精簡概述。哪個解決方案符合這些需求",
+  options_en:[
+    "Create a time-series forecasting model to analyze the medication reviews by using Amazon Personalize.",
+    "Create medication review summaries by using Amazon Bedrock large language models (LLMs).",
+    "Create a classification model that categorizes medications into different groups by using Amazon SageMaker.",
+    "Create medication review summaries by using Amazon Rekognition.",
+  ],
+  options_zh:[
+    "使用 Amazon Personalize 建立時間序列預測模型來分析藥物評論。",
+    "使用 Amazon Bedrock 大型語言模型 (LLMs) 建立藥物評論摘要。",
+    "使用 Amazon SageMaker 建立分類模型，將藥物分類到不同群組。",
+    "使用 Amazon Rekognition 建立藥物評論摘要。",
+  ],
+  answer:[1]
+},
+{
+  n:118,
+  type:"single",
+  q_en:"A food service company wants to develop an ML model to help decrease daily food waste and increase sales revenue. The company needs to continuously improve the model's accuracy. Which solution meets these requirements?",
+  q_zh:"一家餐飲服務公司想開發 ML 模型，以協助減少每日食物浪費並增加銷售收入。公司需要持續改善 模型的準確性。哪個解決方案符合這些需求？",
+  options_en:[
+    "Use Amazon SageMaker and iterate with newer data.",
+    "Use Amazon Personalize and iterate with historical data.",
+    "Use Amazon CloudWatch to analyze customer orders.",
+    "Use Amazon Rekognition to optimize the model.",
+  ],
+  options_zh:[
+    "使用 Amazon SageMaker 並以較新的資料反覆迭代。",
+    "使用 Amazon Personalize 並以歷史資料反覆迭代。",
+    "使用 Amazon CloudWatch 分析客戶訂單。",
+    "使用 Amazon Rekognition 最佳化模型。",
+  ],
+  answer:[0]
+},
+{
+  n:122,
+  type:"single",
+  q_en:"A company wants to create an ML model to predict customer satisfaction. The company needs fully automated model tuning. Which AWS service meets these requirements?",
+  q_zh:"一家公司想建立 ML 模型來預測客戶滿意度。公司需要完全自動化的模型調校。哪個 AWS 服務符合 這些需求？",
+  options_en:[
+    "Amazon Personalize.",
+    "Amazon SageMaker.",
+    "Amazon Athena.",
+    "Amazon Comprehend.",
+  ],
+  options_zh:[
+    "Amazon Personalize。",
+    "Amazon SageMaker。",
+    "Amazon Athena。",
+    "Amazon Comprehend。",
+  ],
+  answer:[1]
+},
+{
+  n:127,
+  type:"single",
+  q_en:"An ecommerce company wants to improve search engine recommendations by customizing the results for each user of the company’s ecommerce platform. Which AWS service meets these requirements?",
+  q_zh:"一家電子商務公司想透過為公司電子商務平台的每位使用者自訂結果，改善搜尋引擎推薦。哪個 A WS 服務符合這些需求？",
+  options_en:[
+    "Amazon Personalize.",
+    "Amazon Kendra.",
+    "Amazon Rekognition.",
+    "Amazon Transcribe.",
+  ],
+  options_zh:[
+    "Amazon Personalize。",
+    "Amazon Kendra。",
+    "Amazon Rekognition。",
+    "Amazon Transcribe。",
+  ],
+  answer:[0]
+},
+{
+  n:129,
+  type:"single",
+  q_en:"A company needs to monitor the performance of its ML systems by using a highly scalable AWS service. Which AWS service meets these requirements? ？",
+  q_zh:"一家公司需要使用高度可擴展的 AWS 服務來監控其 ML 系統的效能。哪個 AWS 服務符合這些需求",
+  options_en:[
+    "Amazon CloudWatch.",
+    "AWS CloudTrail.",
+    "AWS Trusted Advisor.",
+    "AWS Config.",
+  ],
+  options_zh:[
+    "Amazon CloudWatch。",
+    "AWS CloudTrail。",
+    "AWS Trusted Advisor。",
+    "AWS Config。",
+  ],
+  answer:[0]
+},
+{
+  n:131,
+  type:"single",
+  q_en:"Which AWS service makes foundation models (FMs) available to help users build and scale generative AI applications?",
+  q_zh:"哪個 AWS 服務提供基礎模型 (FMs)，協助使用者建置和擴展生成式 AI 應用程式？",
+  options_en:[
+    "Amazon Q Developer.",
+    "Amazon Bedrock.",
+    "Amazon Kendra.",
+    "Amazon Comprehend.",
+  ],
+  options_zh:[
+    "Amazon Q Developer。",
+    "Amazon Bedrock。",
+    "Amazon Kendra。",
+    "Amazon Comprehend。",
+  ],
+  answer:[1]
+},
+{
+  n:141,
+  type:"single",
+  q_en:"A company’s employees provide product descriptions and recommendations to customers when customers call the customer service center. These recommendations are based on where the customers are located. The company wants to use foundation models (FMs) to automate this process. Which AWS service meets these requirements?",
+  q_zh:"一家公司的員工在客戶致電客服中心時，向客戶提供產品描述和推薦。這些推薦是根據客戶所在位 置而定。公司想使用基礎模型 (FMs) 自動化此流程。哪個 AWS 服務符合這些需求？",
+  options_en:[
+    "Amazon Macie.",
+    "Amazon Transcribe.",
+    "Amazon Bedrock.",
+    "Amazon Textract.",
+  ],
+  options_zh:[
+    "Amazon Macie。",
+    "Amazon Transcribe。",
+    "Amazon Bedrock。",
+    "Amazon Textract。",
+  ],
+  answer:[2]
+},
+{
+  n:151,
+  type:"single",
+  q_en:"A company wants to identify harmful language in the comments section of social media posts by using an ML model. The company will not use labeled data to train the model. Which strategy should the company use to identify harmful language?",
+  q_zh:"一家公司想使用 ML 模型識別社群媒體貼文留言區中的有害語言。公司不會使用標記資料來訓練模 型。公司應使用哪種策略來識別有害語言？",
+  options_en:[
+    "Use Amazon Rekognition moderation.",
+    "Use Amazon Comprehend toxicity detection.",
+    "Use Amazon SageMaker built-in algorithms to train the model.",
+    "Use Amazon Polly to monitor comments.",
+  ],
+  options_zh:[
+    "使用 Amazon Rekognition moderation。",
+    "使用 Amazon Comprehend toxicity detection。",
+    "使用 Amazon SageMaker built-in algorithms 訓練模型。",
+    "使用 Amazon Polly 監控留言。",
+  ],
+  answer:[1]
+},
+{
+  n:152,
+  type:"single",
+  q_en:"A media company wants to analyze viewer behavior and demographics to recommend personalized content. The company wants to deploy a customized ML model in its production environment. The company also wants to observe if the model quality drifts over time. Which AWS service or feature meets these requirements?",
+  q_zh:"一家媒體公司想分析觀眾行為和人口統計資料，以推薦個人化內容。公司想在其生產環境中部署客 製化 ML 模型。公司也想觀察模型品質是否隨時間漂移。哪個 AWS 服務或功能符合這些需求？",
+  options_en:[
+    "Amazon Rekognition.",
+    "Amazon SageMaker Clarify.",
+    "Amazon Comprehend.",
+    "Amazon SageMaker Model Monitor.",
+  ],
+  options_zh:[
+    "Amazon Rekognition。",
+    "Amazon SageMaker Clarify。",
+    "Amazon Comprehend。",
+    "Amazon SageMaker Model Monitor。",
+  ],
+  answer:[3]
+},
+{
+  n:153,
+  type:"single",
+  q_en:"A company is deploying AI/ML models by using AWS services. The company wants to offer transparency into the models’ decision-making processes and provide explanations for the model outputs. Which AWS service or feature meets these requirements?",
+  q_zh:"一家公司正在使用 AWS 服務部署 AI/ML 模型。公司想提供模型決策流程的透明度，並為模型輸出 提供解釋。哪個 AWS 服務或功能符合這些需求？",
+  options_en:[
+    "Amazon SageMaker Model Cards.",
+    "Amazon Rekognition.",
+    "Amazon Comprehend.",
+    "Amazon Lex.",
+  ],
+  options_zh:[
+    "Amazon SageMaker Model Cards。",
+    "Amazon Rekognition。",
+    "Amazon Comprehend。",
+    "Amazon Lex。",
+  ],
+  answer:[0]
+},
+{
+  n:154,
+  type:"single",
+  q_en:"A manufacturing company wants to create product descriptions in multiple languages. Which AWS service will automate this task?",
+  q_zh:"一家製造公司想以多種語言建立產品描述。哪個 AWS 服務會自動化此任務？",
+  options_en:[
+    "Amazon Translate.",
+    "Amazon Transcribe.",
+    "Amazon Kendra.",
+    "Amazon Polly.",
+  ],
+  options_zh:[
+    "Amazon Translate。",
+    "Amazon Transcribe。",
+    "Amazon Kendra。",
+    "Amazon Polly。",
+  ],
+  answer:[0]
+},
+{
+  n:158,
+  type:"single",
+  q_en:"A medical company wants to develop an AI application that can access structured patient records, extract relevant information, and generate concise summaries. Which solution will meet these requirements?",
+  q_zh:"A medical company wants to develop an AI application that can access structured patient records, extract relevant information, and generate concise summaries. Which solution will meet these requirements?",
+  options_en:[
+    "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.",
+    "Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool.",
+    "Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.",
+    "Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries.",
+  ],
+  options_zh:[
+    "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.",
+    "Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool.",
+    "Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.",
+    "Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries.",
+  ],
+  answer:[0]
+},
+{
+  n:171,
+  type:"single",
+  q_en:"A company that uses multiple ML models wants to identify changes in original model quality so that the company can resolve any issues. Which AWS service or feature meets these requirements?",
+  q_zh:"一家使用多個 ML 模型的公司想識別原始模型品質的變化，以便公司能解決任何問題。哪個 AWS 服 務或功能符合這些需求？",
+  options_en:[
+    "Amazon SageMaker JumpStart.",
+    "Amazon SageMaker HyperPod.",
+    "Amazon SageMaker Data Wrangler.",
+    "Amazon SageMaker Model Monitor.",
+  ],
+  options_zh:[
+    "Amazon SageMaker JumpStart。",
+    "Amazon SageMaker HyperPod。",
+    "Amazon SageMaker Data Wrangler。",
+    "Amazon SageMaker Model Monitor。",
+  ],
+  answer:[3]
+},
+{
+  n:189,
+  type:"single",
+  q_en:"A hospital wants to use a generative AI solution with speech-to-text functionality to help improve employee skills in dictating clinical notes. Which AWS service meets these requirements?",
+  q_zh:"一家醫院想使用具備語音轉文字功能的生成式 AI 解決方案，協助提升員工口述臨床筆記的技能。哪 個 AWS 服務符合這些需求？",
+  options_en:[
+    "Amazon Q Developer.",
+    "Amazon Polly.",
+    "Amazon Rekognition.",
+    "AWS HealthScribe.",
+  ],
+  options_zh:[
+    "Amazon Q Developer。",
+    "Amazon Polly。",
+    "Amazon Rekognition。",
+    "AWS HealthScribe。",
+  ],
+  answer:[3]
+},
+{
+  n:194,
+  type:"single",
+  q_en:"A financial company uses AWS to host its generative AI models. The company must generate reports to show adherence to international regulations for handling sensitive customer data. Which AWS service meets these requirements?",
+  q_zh:"一家金融公司使用 AWS 託管其生成式 AI 模型。公司必須產生報告，以證明遵守處理敏感客戶資料 的國際法規。哪個 AWS 服務符合這些需求？",
+  options_en:[
+    "Amazon Macie.",
+    "AWS Artifact.",
+    "AWS Secrets Manager.",
+    "AWS Config.",
+  ],
+  options_zh:[
+    "Amazon Macie。",
+    "AWS Artifact。",
+    "AWS Secrets Manager。",
+    "AWS Config。",
+  ],
+  answer:[1]
+},
+{
+  n:195,
+  type:"single",
+  q_en:"A medical company wants to modernize its onsite information processing application. The company wants to use generative AI to respond to medical questions from patients. Which AWS service should the company use to ensure responsible AI for the application?",
+  q_zh:"一家醫療公司想現代化其現場資訊處理應用程式。公司想使用生成式 AI 回應病患的醫療問題。公司 應使用哪個 AWS 服務來確保應用程式的負責任 AI？",
+  options_en:[
+    "Guardrails for Amazon Bedrock.",
+    "Amazon Inspector.",
+    "Amazon Rekognition.",
+    "AWS Trusted Advisor.",
+  ],
+  options_zh:[
+    "Guardrails for Amazon Bedrock。",
+    "Amazon Inspector。",
+    "Amazon Rekognition。",
+    "AWS Trusted Advisor。",
+  ],
+  answer:[0]
+},
+{
+  n:198,
+  type:"single",
+  q_en:"A company wants to improve its chatbot's responses to match the company's desired tone. The company has 100 examples of high-quality conversations between customer service agents and customers. The company wants to use this data to incorporate company tone into the chatbot's responses. Which solution meets these requirements?",
+  q_zh:"一家公司想改善其聊天機器人的回應，使其符合公司的期望語氣。公司有 100 個客服人員與客戶之 間高品質對話的範例。公司想使用這些資料將公司語氣納入聊天機器人的回應。哪個解決方案符合 這些需求？",
+  options_en:[
+    "Use Amazon Personalize to generate responses.",
+    "Create an Amazon SageMaker HyperPod pre-training job.",
+    "Host the model by using Amazon SageMaker. Use TensorRT for large language model (LLM) deployment.",
+    "Create an Amazon Bedrock fine-tuning job.",
+  ],
+  options_zh:[
+    "使用 Amazon Personalize 產生回應。",
+    "建立 Amazon SageMaker HyperPod pre-training job。",
+    "使用 Amazon SageMaker 託管模型。使用 TensorRT 進行大型語言模型 (LLM) 部署。",
+    "建立 Amazon Bedrock fine-tuning job。",
+  ],
+  answer:[3]
+},
+{
+  n:211,
+  type:"single",
+  q_en:"A company has developed a generative AI model for customer segmentation. The model has been deployed in the company's production environment for a long time. The company recently noticed some inconsistency in the model's responses. The company wants to evaluate model bias and drift. Which AWS service or feature meets these requirements?",
+  q_zh:"一家公司已開發用於客戶分群的生成式 AI 模型。該模型已在公司的生產環境中部署很長一段時間。 公司最近注意到模型回應中有一些不一致。公司想要評估模型偏差和漂移。哪一項 AWS 服務或功 能符合這些需求？",
+  options_en:[
+    "Amazon SageMaker Model Monitor.",
+    "Amazon SageMaker Clarify.",
+    "Amazon SageMaker Model Cards.",
+    "Amazon SageMaker Feature Store.",
+  ],
+  options_zh:[
+    "Amazon SageMaker Model Monitor。",
+    "Amazon SageMaker Clarify。",
+    "Amazon SageMaker Model Cards。",
+    "Amazon SageMaker Feature Store。",
+  ],
+  answer:[0]
+},
+{
+  n:220,
+  type:"single",
+  q_en:"An animation company wants to provide subtitles for its content. Which AWS service meets this requirement?",
+  q_zh:"一家動畫公司想要為其內容提供字幕。哪一項 AWS 服務符合此需求？",
+  options_en:[
+    "Amazon Comprehend.",
+    "Amazon Polly.",
+    "Amazon Transcribe.",
+    "Amazon Translate.",
+  ],
+  options_zh:[
+    "Amazon Comprehend。",
+    "Amazon Polly。",
+    "Amazon Transcribe。",
+    "Amazon Translate。",
+  ],
+  answer:[2]
+},
+{
+  n:225,
+  type:"single",
+  q_en:"A company has developed custom computer vision models. The company needs a user-friendly interface for data labeling to minimize model mistakes on new real-world data. Which AWS service, feature, or tool meets these requirements?",
+  q_zh:"一家公司已開發自訂電腦視覺模型。公司需要一個使用者友善的資料標記介面，以盡量減少模型在 新的真實世界資料上的錯誤。哪一項 AWS 服務、功能或工具符合這些需求？",
+  options_en:[
+    "Amazon SageMaker Ground Truth.",
+    "Amazon SageMaker Canvas.",
+    "Amazon Bedrock playground.",
+    "Amazon Bedrock Agents.",
+  ],
+  options_zh:[
+    "Amazon SageMaker Ground Truth。",
+    "Amazon SageMaker Canvas。",
+    "Amazon Bedrock playground。",
+    "Amazon Bedrock Agents。",
+  ],
+  answer:[0]
+},
+{
+  n:234,
+  type:"single",
+  q_en:"A financial services company must ensure that its generative AI-powered chatbot provides factual responses for regulatory compliance. Which solution prevents the underlying foundation model (FM) from hallucinating?",
+  q_zh:"一家金融服務公司必須確保其生成式 AI 驅動的 chatbot 為符合法規遵循而提供事實性回應。哪一 個解決方案可防止底層 foundation model (FM) 產生幻覺？",
+  options_en:[
+    "Use AWS Config to query compliance metadata by using natural language.",
+    "Configure Amazon Bedrock Guardrails to evaluate user inputs and model responses.",
+    "Use Amazon Fraud Detector to detect potentially fraudulent online activities.",
+    "Use AWS Audit Manager to prepare IT audit and compliance reports.",
+  ],
+  options_zh:[
+    "使用 AWS Config 透過自然語言查詢合規中繼資料。",
+    "設定 Amazon Bedrock Guardrails 以評估使用者輸入和模型回應。",
+    "使用 Amazon Fraud Detector 偵測可能的詐欺線上活動。",
+    "使用 AWS Audit Manager 準備 IT 稽核和合規報告。",
+  ],
+  answer:[1]
+},
+{
+  n:236,
+  type:"single",
+  q_en:"A company has created multiple ML models. The company needs a solution for storing, managing, and versioning the models. Which AWS service or feature meets these requirements?",
+  q_zh:"一家公司已建立多個 ML 模型。公司需要一個用於儲存、管理和版本控制模型的解決方案。哪一項 AWS 服務或功能符合這些需求？",
+  options_en:[
+    "AWS Audit Manager.",
+    "Amazon SageMaker Model Monitor.",
+    "Amazon SageMaker Model Registry.",
+    "Amazon SageMaker Canvas.",
+  ],
+  options_zh:[
+    "AWS Audit Manager。",
+    "Amazon SageMaker Model Monitor。",
+    "Amazon SageMaker Model Registry。",
+    "Amazon SageMaker Canvas。",
+  ],
+  answer:[2]
+},
+{
+  n:239,
+  type:"single",
+  q_en:"A news agency publishes articles in English. The agency wants to make articles available in other languages. Which solution meets these requirements? ？",
+  q_zh:"一家新聞機構以英文發布文章。該機構想要讓文章以其他語言提供。哪一個解決方案符合這些需求",
+  options_en:[
+    "Add Amazon Transcribe to the company’s website.",
+    "Use the Amazon Translate real-time translation feature.",
+    "Add Amazon Personalize to the company’s website.",
+    "Use the Amazon Textract real-time document processing feature.",
+  ],
+  options_zh:[
+    "將 Amazon Transcribe 加入公司的網站。",
+    "使用 Amazon Translate 即時翻譯功能。",
+    "將 Amazon Personalize 加入公司的網站。",
+    "使用 Amazon Textract 即時文件處理功能。",
+  ],
+  answer:[1]
+},
+{
+  n:248,
+  type:"single",
+  q_en:"A financial company wants to build workflows for human review of ML predictions. The company wants to define confidence thresholds for its use case and adjust the thresholds over time. Which AWS service meets these requirements?",
+  q_zh:"一家金融公司想要建置 ML 預測的人工作業審查流程。公司想要為其使用案例定義信心閾值，並隨 時間調整閾值。哪一項 AWS 服務符合這些需求？",
+  options_en:[
+    "Amazon Personalize.",
+    "Amazon Augmented AI (Amazon A2I).",
+    "Amazon Inspector.",
+    "AWS Audit Manager.",
+  ],
+  options_zh:[
+    "Amazon Personalize。",
+    "Amazon Augmented AI (Amazon A2I)。",
+    "Amazon Inspector。",
+    "AWS Audit Manager。",
+  ],
+  answer:[1]
+},
+{
+  n:249,
+  type:"single",
+  q_en:"A company wants to develop an AI assistant for employees to query internal data. Which AWS service will meet this requirement?",
+  q_zh:"一家公司想要為員工開發 AI 助理，以查詢內部資料。哪一項 AWS 服務符合此需求？",
+  options_en:[
+    "Amazon Rekognition.",
+    "Amazon Textract.",
+    "Amazon Lex.",
+    "Amazon Q Business.",
+  ],
+  options_zh:[
+    "Amazon Rekognition。",
+    "Amazon Textract。",
+    "Amazon Lex。",
+    "Amazon Q Business。",
+  ],
+  answer:[3]
+},
+{
+  n:250,
+  type:"single",
+  q_en:"A company wants to build and deploy ML models on AWS without writing any code. Which AWS service or feature meets these requirements?",
+  q_zh:"一家公司想要在 AWS 上建置和部署 ML 模型，而且不撰寫任何程式碼。哪一項 AWS 服務或功能符 合這些需求？",
+  options_en:[
+    "Amazon SageMaker Canvas.",
+    "Amazon Rekognition.",
+    "AWS DeepRacer.",
+    "Amazon Comprehend.",
+  ],
+  options_zh:[
+    "Amazon SageMaker Canvas。",
+    "Amazon Rekognition。",
+    "AWS DeepRacer。",
+    "Amazon Comprehend。",
+  ],
+  answer:[0]
+},
+{
+  n:252,
+  type:"single",
+  q_en:"A financial company has offices in different countries worldwide. The company requires that all API calls between generative AI applications and foundation models (FM) must not travel across the public internet. Which AWS service should the company use?",
+  q_zh:"一家金融公司在全球不同國家設有辦公室。公司要求生成式 AI 應用程式與 foundation models (F M) 之間的所有 API 呼叫不得經過公用網際網路。公司應使用哪一項 AWS 服務？",
+  options_en:[
+    "AWS PrivateLink.",
+    "Amazon Q.",
+    "Amazon CloudFront.",
+    "AWS CloudTrail.",
+  ],
+  options_zh:[
+    "AWS PrivateLink。",
+    "Amazon Q。",
+    "Amazon CloudFront。",
+    "AWS CloudTrail。",
+  ],
+  answer:[0]
+},
+{
+  n:253,
+  type:"single",
+  q_en:"An ecommerce company is deploying a chatbot. The chatbot will give users the ability to ask questions about the company’s products and receive details on users’ orders. The company must implement safeguards for the chatbot to filter harmful content from the input prompts and chatbot responses. Which AWS feature or resource meets these requirements?",
+  q_zh:"一家電子商務公司正在部署 chatbot。該 chatbot 會讓使用者能夠詢問公司產品的問題，並接收使 用者訂單的詳細資訊。公司必須為 chatbot 實作防護措施，以過濾輸入提示和 chatbot 回應中的有 害內容。哪一項 AWS 功能或資源符合這些需求？",
+  options_en:[
+    "Amazon Bedrock Guardrails.",
+    "Amazon Bedrock Agents.",
+    "Amazon Bedrock inference APIs.",
+    "Amazon Bedrock custom models.",
+  ],
+  options_zh:[
+    "Amazon Bedrock Guardrails。",
+    "Amazon Bedrock Agents。",
+    "Amazon Bedrock inference APIs。",
+    "Amazon Bedrock custom models。",
+  ],
+  answer:[0]
+},
+{
+  n:254,
+  type:"single",
+  q_en:"A company wants to learn about generative AI applications in an experimental environment. Which solution will meet this requirement MOST cost-effectively?",
+  q_zh:"一家公司想要在實驗環境中了解生成式 AI 應用程式。哪一個解決方案會以最具成本效益的方式符合 此需求？",
+  options_en:[
+    "Amazon Q Developer.",
+    "Amazon SageMaker JumpStart.",
+    "Amazon Bedrock PartyRock.",
+    "Amazon Q Business.",
+  ],
+  options_zh:[
+    "Amazon Q Developer。",
+    "Amazon SageMaker JumpStart。",
+    "Amazon Bedrock PartyRock。",
+    "Amazon Q Business。",
+  ],
+  answer:[2]
+},
+{
+  n:258,
+  type:"single",
+  q_en:"An AI practitioner who has minimal ML knowledge wants to predict employee attrition without writing code. Which Amazon SageMaker feature meets this requirement?",
+  q_zh:"一位 AI 從業人員具備最低限度的 ML 知識，且想要在不撰寫程式碼的情況下預測員工流失。哪一項 Amazon SageMaker 功能符合此需求？",
+  options_en:[
+    "SageMaker Canvas.",
+    "SageMaker Clarify.",
+    "SageMaker Model Monitor.",
+    "SageMaker Data Wrangler.",
+  ],
+  options_zh:[
+    "SageMaker Canvas。",
+    "SageMaker Clarify。",
+    "SageMaker Model Monitor。",
+    "SageMaker Data Wrangler。",
+  ],
+  answer:[0]
+},
+{
+  n:266,
+  type:"single",
+  q_en:"An online media streaming company wants to give its customers the ability to perform natural language-based image search and filtering. The company needs a vector database that can help with similarity searches and nearest neighbor queries. Which AWS service meets these requirements?",
+  q_zh:"一家線上媒體串流公司想要讓客戶能夠執行以自然語言為基礎的圖像搜尋與篩選。公司需要一個可 協助相似性搜尋和最近鄰查詢的向量資料庫。哪一項 AWS 服務符合這些需求？",
+  options_en:[
+    "Amazon Comprehend.",
+    "Amazon Personalize.",
+    "Amazon Polly.",
+    "Amazon OpenSearch Service.",
+  ],
+  options_zh:[
+    "Amazon Comprehend。",
+    "Amazon Personalize。",
+    "Amazon Polly。",
+    "Amazon OpenSearch Service。",
+  ],
+  answer:[3]
+},
+{
+  n:276,
+  type:"single",
+  q_en:"An AI practitioner wants to evaluate ML models. The AI practitioner wants to provide explanations of model predictions to customers and stakeholders. Which AWS service or feature will meet these requirements?",
+  q_zh:"一位 AI 從業人員想要評估 ML 模型。該 AI 從業人員想要向客戶和利害關係人提供模型預測的解釋 。哪一項 AWS 服務或功能符合這些需求？",
+  options_en:[
+    "Amazon QuickSight.",
+    "Amazon Comprehend.",
+    "AWS Trusted Advisor.",
+    "Amazon SageMaker Clarify.",
+  ],
+  options_zh:[
+    "Amazon QuickSight。",
+    "Amazon Comprehend。",
+    "AWS Trusted Advisor。",
+    "Amazon SageMaker Clarify。",
+  ],
+  answer:[3]
+},
+{
+  n:285,
+  type:"single",
+  q_en:"An online learning company with large volumes of education materials wants to use enterprise search. Which AWS service meets these requirements?",
+  q_zh:"一家線上學習公司擁有大量教育教材，想要使用企業搜尋。哪一項 AWS 服務符合這些需求？",
+  options_en:[
+    "Amazon Comprehend.",
+    "Amazon Textract.",
+    "Amazon Kendra.",
+    "Amazon Personalize.",
+  ],
+  options_zh:[
+    "Amazon Comprehend。",
+    "Amazon Textract。",
+    "Amazon Kendra。",
+    "Amazon Personalize。",
+  ],
+  answer:[2]
+},
+{
+  n:290,
+  type:"single",
+  q_en:"A company is using Amazon SageMaker to deploy a model that identifies if social media posts contain certain topics. The company needs to show how different input features influence model behavior. Which SageMaker feature meets these requirements?",
+  q_zh:"一家公司正在使用 Amazon SageMaker 部署模型，以識別社群媒體貼文是否包含特定主題。公司 需要顯示不同輸入特徵如何影響模型行為。哪一項 SageMaker 功能符合這些需求？",
+  options_en:[
+    "SageMaker Canvas.",
+    "SageMaker Clarify.",
+    "SageMaker Feature Store.",
+    "SageMaker Ground Truth.",
+  ],
+  options_zh:[
+    "SageMaker Canvas。",
+    "SageMaker Clarify。",
+    "SageMaker Feature Store。",
+    "SageMaker Ground Truth。",
+  ],
+  answer:[1]
+},
+{
+  n:295,
+  type:"single",
+  q_en:"Which AWS service or feature stores embeddings in a vector database for use with foundation models (FMs) and Retrieval Augmented Generation (RAG)? 和 Retrieval Augmented Generation (RAG) 使用？",
+  q_zh:"哪一項 AWS 服務或功能會將 embeddings 儲存在向量資料庫中，以供 foundation models (FMs)",
+  options_en:[
+    "Amazon SageMaker Ground Truth.",
+    "Amazon OpenSearch Service.",
+    "Amazon Transcribe.",
+    "Amazon Textract.",
+  ],
+  options_zh:[
+    "Amazon SageMaker Ground Truth。",
+    "Amazon OpenSearch Service。",
+    "Amazon Transcribe。",
+    "Amazon Textract。",
+  ],
+  answer:[1]
+},
+{
+  n:297,
+  type:"single",
+  q_en:"A company is using Amazon Bedrock for a generative AI solution. The solution must integrate a service with vector database storage and vector search capabilities. Which AWS service will meet these requirements?",
+  q_zh:"一家公司正在使用 Amazon Bedrock 建立生成式 AI 解決方案。該解決方案必須整合具備向量資料 庫儲存和向量搜尋功能的服務。哪一項 AWS 服務符合這些需求？",
+  options_en:[
+    "Amazon DynamoDB.",
+    "Amazon OpenSearch Service.",
+    "Amazon ElastiCache.",
+    "Amazon Redshift.",
+  ],
+  options_zh:[
+    "Amazon DynamoDB。",
+    "Amazon OpenSearch Service。",
+    "Amazon ElastiCache。",
+    "Amazon Redshift。",
+  ],
+  answer:[1]
+},
+{
+  n:298,
+  type:"single",
+  q_en:"A media streaming platform wants to provide movie recommendations to users based on the users’ account history. Which AWS service meets these requirements?",
+  q_zh:"一家媒體串流平台想要根據使用者帳戶歷史紀錄向使用者提供電影推薦。哪一項 AWS 服務符合這 些需求？",
+  options_en:[
+    "Amazon Polly.",
+    "Amazon Comprehend.",
+    "Amazon Transcribe.",
+    "Amazon Personalize.",
+  ],
+  options_zh:[
+    "Amazon Polly。",
+    "Amazon Comprehend。",
+    "Amazon Transcribe。",
+    "Amazon Personalize。",
+  ],
+  answer:[3]
+},
+{
+  n:299,
+  type:"single",
+  q_en:"A company has developed an ML model to approve or reject loan applications. The model’s decision-making process must be transparent and explainable to comply with regulatory requirements. The company must document the decision-making process for audit purposes. Which solution will meet these requirements?",
+  q_zh:"一家公司已開發 ML 模型來核准或拒絕貸款申請。模型的決策過程必須透明且可解釋，以符合法規 要求。公司必須記錄決策過程以供稽核用途。哪一個解決方案符合這些需求？",
+  options_en:[
+    "Amazon Textract.",
+    "Amazon SageMaker Model Card.",
+    "AWS Cloud Formation.",
+    "Amazon Comprehend.",
+  ],
+  options_zh:[
+    "Amazon Textract。",
+    "Amazon SageMaker Model Card。",
+    "AWS Cloud Formation。",
+    "Amazon Comprehend。",
+  ],
+  answer:[1]
+},
+{
+  n:301,
+  type:"single",
+  q_en:"A company is using large language models (LLMs) to develop online tutoring applications. The company needs to apply configurable safeguards to the LLMs. These safeguards must ensure that the LLMs follow standard safety rules when creating applications. Which solution will meet these requirements with the LEAST effort?",
+  q_zh:"一家公司正在使用大型語言模型 (LLMs) 開發線上家教應用程式。公司需要對 LLMs 套用可設定的防 護措施。這些防護措施必須確保 LLMs 在建立應用程式時遵循標準安全規則。哪一個解決方案能以 最少工作量符合這些需求？",
+  options_en:[
+    "Amazon Bedrock playgrounds.",
+    "Amazon SageMaker Clarify.",
+    "Amazon Bedrock Guardrails.",
+    "Amazon SageMaker Jumpstart.",
+  ],
+  options_zh:[
+    "Amazon Bedrock playgrounds。",
+    "Amazon SageMaker Clarify。",
+    "Amazon Bedrock Guardrails。",
+    "Amazon SageMaker Jumpstart。",
+  ],
+  answer:[2]
+},
+{
+  n:324,
+  type:"single",
+  q_en:"A company runs a website for users to make travel reservations. The company wants an AI solution to help create consistent branding for hotels on the website. The AI solution needs to generate hotel descriptions for the website in a consistent writing style. Which AWS service will meet these requirements?",
+  q_zh:"一家公司經營一個讓使用者進行旅遊預訂的網站。公司想要 AI 解決方案來協助為網站上的飯店建立 一致的品牌形象。該 AI 解決方案需要以一致的寫作風格為網站產生飯店描述。哪個 AWS 服務能滿 足這些需求？",
+  options_en:[
+    "Amazon Comprehend.",
+    "Amazon Personalize.",
+    "Amazon Rekognition.",
+    "Amazon Bedrock.",
+  ],
+  options_zh:[
+    "Amazon Comprehend。",
+    "Amazon Personalize。",
+    "Amazon Rekognition。",
+    "Amazon Bedrock。",
+  ],
+  answer:[3]
+},
+{
+  n:332,
+  type:"single",
+  q_en:"A company uses Amazon Comprehend to analyze customer feedback. A customer has several unique trained models. The company uses Comprehend to assign each model an endpoint. The company wants to automate a report on each endpoint that is not used for more than 15 days. Which service will meet these requirements?",
+  q_zh:"一家公司使用 Amazon Comprehend 分析客戶回饋。一位客戶有數個獨特的已訓練模型。公司使 用 Comprehend 為每個模型指派 endpoint。公司想要針對超過 15 天未使用的每個 endpoint 自動 產生報告。哪個服務能滿足這些需求？",
+  options_en:[
+    "AWS Trusted Advisor.",
+    "Amazon CloudWatch.",
+    "AWS CloudTrail.",
+    "AWS Config.",
+  ],
+  options_zh:[
+    "AWS Trusted Advisor。",
+    "Amazon CloudWatch。",
+    "AWS CloudTrail。",
+    "AWS Config。",
+  ],
+  answer:[1]
+},
+{
+  n:344,
+  type:"single",
+  q_en:"Which foundation model (FM) in Amazon Bedrock can be fine-tuned for text, image, and video comprehension?",
+  q_zh:"Amazon Bedrock 中哪個 foundation model (FM) 可以針對文字、影像和影片理解進行微調？",
+  options_en:[
+    "Amazon Nova Pro.",
+    "Amazon Titan Multimodal Embeddings G1.",
+    "Amazon Titan Text G1 - Express.",
+    "Amazon Nova Micro.",
+  ],
+  options_zh:[
+    "Amazon Nova Pro。",
+    "Amazon Titan Multimodal Embeddings G1。",
+    "Amazon Titan Text G1 - Express。",
+    "Amazon Nova Micro。",
+  ],
+  answer:[0]
+},
+{
+  n:353,
+  type:"single",
+  q_en:"A company is using Amazon Q Business to create an AI assistant. The company needs to restrict user interactions with the AI assistant to company-approved topics. Which feature will meet these requirements?",
+  q_zh:"一家公司正在使用 Amazon Q Business 建立 AI 助理。公司需要將使用者與 AI 助理的互動限制在公 司核准的主題內。哪個功能能滿足這些需求？",
+  options_en:[
+    "Amazon Q Business Enterprise index.",
+    "Amazon Q Business Starter index.",
+    "Amazon Q Business application guardrails.",
+    "Amazon Q index cross-account access.",
+  ],
+  options_zh:[
+    "Amazon Q Business Enterprise index。",
+    "Amazon Q Business Starter index。",
+    "Amazon Q Business application guardrails。",
+    "Amazon Q index cross-account access。",
+  ],
+  answer:[2]
+},
+{
+  n:359,
+  type:"single",
+  q_en:"A company is using Amazon SageMaker AI to develop AI/ML solutions. The company must use only approved data for model training. The AI/ML solutions must comply with company policy and ethical guidelines. Which solution will meet these requirements?",
+  q_zh:"一家公司正在使用 Amazon SageMaker AI 開發 AI/ML 解決方案。公司必須只使用核准的資料進行 模型訓練。AI/ML 解決方案必須符合公司政策和倫理準則。哪個解決方案能滿足這些需求？",
+  options_en:[
+    "Amazon SageMaker Catalog.",
+    "Amazon SageMaker Clarify.",
+    "Amazon SageMaker Model Registry.",
+    "Amazon SageMaker Model Cards.",
+  ],
+  options_zh:[
+    "Amazon SageMaker Catalog。",
+    "Amazon SageMaker Clarify。",
+    "Amazon SageMaker Model Registry。",
+    "Amazon SageMaker Model Cards。",
+  ],
+  answer:[0]
+},
+{
+  n:363,
+  type:"single",
+  q_en:"A company wants to use large language models (LLMs) to create a chatbot. The chatbot will assist customers with product inquiries, order tracking, and returns. The chatbot must be able to process text inputs and image inputs to generate responses. Which AWS service meets these requirements?",
+  q_zh:"一家公司想要使用 large language models (LLMs) 建立聊天機器人。該聊天機器人將協助客戶處理 產品詢問、訂單追蹤和退貨。該聊天機器人必須能處理文字輸入和影像輸入來產生回應。哪個 AWS 服務能滿足這些需求？",
+  options_en:[
+    "Amazon Bedrock.",
+    "Amazon Comprehend.",
+    "Amazon Q.",
+    "Amazon Rekognition.",
+  ],
+  options_zh:[
+    "Amazon Bedrock。",
+    "Amazon Comprehend。",
+    "Amazon Q。",
+    "Amazon Rekognition。",
+  ],
+  answer:[0]
+},
+{
+  n:364,
+  type:"single",
+  q_en:"A company wants to increase employee productivity by using a generative AI solution to write code to test software applications. Which solution will meet these requirements with the LEAST operational effort?",
+  q_zh:"一家公司想要使用生成式 AI 解決方案撰寫程式碼以測試軟體應用程式，藉此提高員工生產力。哪個 解決方案能以最少的營運工作量滿足這些需求？",
+  options_en:[
+    "Amazon Q Business.",
+    "Amazon Bedrock Agents.",
+    "Amazon Q Developer.",
+    "Amazon SageMaker Clarify.",
+  ],
+  options_zh:[
+    "Amazon Q Business。",
+    "Amazon Bedrock Agents。",
+    "Amazon Q Developer。",
+    "Amazon SageMaker Clarify。",
+  ],
+  answer:[2]
+},
+{
+  n:365,
+  type:"single",
+  q_en:"Which AWS service helps select foundation models (FMs) for generative AI use cases?",
+  q_zh:"哪個 AWS 服務有助於為生成式 AI 使用案例選擇 foundation models (FMs)？",
+  options_en:[
+    "Amazon Personalize.",
+    "Amazon Bedrock.",
+    "Amazon Q Developer.",
+    "Amazon Rekognition.",
+  ],
+  options_zh:[
+    "Amazon Personalize。",
+    "Amazon Bedrock。",
+    "Amazon Q Developer。",
+    "Amazon Rekognition。",
+  ],
+  answer:[1]
+},
+{
+  n:368,
+  type:"single",
+  q_en:"A company wants to use foundational models (FMs) to develop and deploy an AI model. Which AWS service or resource will meet these requirements with the LEAST development effort?",
+  q_zh:"一家公司想要使用 foundational models (FMs) 開發並部署 AI 模型。哪個 AWS 服務或資源能以最 少的開發工作量滿足這些需求？",
+  options_en:[
+    "Amazon Bedrock.",
+    "Amazon SageMaker AI.",
+    "Amazon Bedrock PartyRock.",
+    "Amazon Q Developer.",
+  ],
+  options_zh:[
+    "Amazon Bedrock。",
+    "Amazon SageMaker AI。",
+    "Amazon Bedrock PartyRock。",
+    "Amazon Q Developer。",
+  ],
+  answer:[0]
+},
+{
+  n:369,
+  type:"single",
+  q_en:"A financial company stores patterns of fraudulent behavior in a database. The company uses this data to conduct investigations. The company wants to use a graph-based ML solution to develop an AI tool that helps with these investigations. Which AWS service will meet these requirements?",
+  q_zh:"一家金融公司將詐欺行為模式儲存在資料庫中，並使用這些資料進行調查。公司希望使用基於圖形 （graph-based）的機器學習解決方案來開發一個 AI 工具，以協助這些調查工作。哪個 AWS 服務 最能滿足這些需求？",
+  options_en:[
+    "Amazon OpenSearch Service",
+    "Amazon Aurora",
+    "Amazon Neptune",
+    "Amazon MemoryDB",
+  ],
+  options_zh:[
+    "Amazon OpenSearch Service",
+    "Amazon Aurora",
+    "Amazon Neptune",
+    "Amazon MemoryDB",
+  ],
+  answer:[2]
+},
+{
+  n:372,
+  type:"single",
+  q_en:"A company is using AI to build a toy recommendation website that suggests toys based on a customer’s interests and age. The company notices that the AI tends to suggest stereotypically gendered toys. Which AWS service or feature should the company use to investigate the bias?",
+  q_zh:"一家公司正在使用 AI 建置玩具推薦網站，根據客戶的興趣和年齡推薦玩具。公司注意到 AI 傾向於 推薦具有性別刻板印象的玩具。公司應使用哪個 AWS 服務或功能來調查偏見？",
+  options_en:[
+    "Amazon Rekognition.",
+    "Amazon Q Developer.",
+    "Amazon Comprehend.",
+    "Amazon SageMaker Clarify.",
+  ],
+  options_zh:[
+    "Amazon Rekognition。",
+    "Amazon Q Developer。",
+    "Amazon Comprehend。",
+    "Amazon SageMaker Clarify。",
+  ],
+  answer:[3]
+},
+{
+  n:373,
+  type:"single",
+  q_en:"A company has a team of AI practitioners that builds and maintains AI applications in an AWS account. The company must keep records of the actions that each AI practitioner takes in the AWS account for audit purposes. Which AWS service will meet these requirements?",
+  q_zh:"一家公司有一組 AI 從業人員，負責在 AWS 帳戶中建置和維護 AI 應用程式。基於稽核目的，公司必 須保留每位 AI 從業人員在 AWS 帳戶中採取之動作的記錄。哪項 AWS 服務可以滿足這些需求？",
+  options_en:[
+    "AWS CloudTrail.",
+    "AWS Config.",
+    "AWS Audit Manager.",
+    "AWS Trusted Advisor.",
+  ],
+  options_zh:[
+    "AWS CloudTrail.",
+    "AWS Config.",
+    "AWS Audit Manager.",
+    "AWS Trusted Advisor.",
+  ],
+  answer:[0]
+},
+{
+  n:375,
+  type:"single",
+  q_en:"A company trains image and text generation models on Amazon SageMaker AI. The company releases the models by using Amazon Bedrock. The company must retain a tamper-proof, queryable record of every API call from SageMaker AI, Amazon Bedrock, and AWS Identity and Access Management (IAM). Which AWS service will meet these requirements? 這些模型。公司必須保留來自 SageMaker AI、Amazon Bedrock 和 AWS Identity and Access Man",
+  q_zh:"一家公司在 Amazon SageMaker AI 上訓練影像和文字生成模型。公司使用 Amazon Bedrock 發布 agement (IAM) 的每個 API 呼叫之防竄改且可查詢記錄。哪項 AWS 服務可以滿足這些需求？",
+  options_en:[
+    "AWS Trusted Advisor.",
+    "Amazon Macie.",
+    "AWS CloudTrail Lake.",
+    "Amazon Inspector.",
+  ],
+  options_zh:[
+    "AWS Trusted Advisor.",
+    "Amazon Macie.",
+    "AWS CloudTrail Lake.",
+    "Amazon Inspector.",
+  ],
+  answer:[2]
+},
+{
+  n:380,
+  type:"single",
+  q_en:"A company has deployed an AI application in production on AWS. The application’s responses have become less accurate over time. The company needs a solution to send alerts when the application performance drifts. Which AWS service or feature will meet this requirement?",
+  q_zh:"一家公司已在 AWS 的生產環境中部署 AI 應用程式。該應用程式的回應隨時間變得較不準確。公司 需要一個解決方案，在應用程式效能漂移時傳送警示。哪項 AWS 服務或功能可以滿足此需求？",
+  options_en:[
+    "Amazon Augmented AI (Amazon A2I).",
+    "Amazon SageMaker Model Monitor.",
+    "Amazon Rekognition.",
+    "AWS Trusted Advisor.",
+  ],
+  options_zh:[
+    "Amazon Augmented AI (Amazon A2I)。",
+    "Amazon SageMaker Model Monitor。",
+    "Amazon Rekognition。",
+    "AWS Trusted Advisor。",
+  ],
+  answer:[1]
+},
+{
+  n:381,
+  type:"single",
+  q_en:"A company stores its AI datasets in Amazon S3 buckets. The company wants to share the S3 buckets with its business partners. The company needs to avoid accidentally sharing sensitive data. Which AWS service should the company use to discover sensitive data in the dataset? ？",
+  q_zh:"一家公司將其 AI 資料集存放在 Amazon S3 儲存貯體中。公司想要與業務合作夥伴共用這些 S3 儲 存貯體。公司需要避免意外共用敏感資料。公司應使用哪項 AWS 服務來探索資料集中的敏感資料",
+  options_en:[
+    "Amazon Kendra.",
+    "Amazon Macie.",
+    "Amazon Textract.",
+    "AWS Data Exchange.",
+  ],
+  options_zh:[
+    "Amazon Kendra。",
+    "Amazon Macie。",
+    "Amazon Textract。",
+    "AWS Data Exchange。",
+  ],
+  answer:[1]
+},
+{
+  n:390,
+  type:"single",
+  q_en:"A company wants to deploy a secure AI system with controlled access. The system must allow only authorized personnel to access model training data. Which AWS service will meet these requirements?",
+  q_zh:"一家公司想要部署具有受控存取的安全 AI 系統。該系統必須只允許授權人員存取模型訓練資料。哪 項 AWS 服務可以滿足這些需求？",
+  options_en:[
+    "AWS Key Management System (AWS KMS).",
+    "Amazon EMR.",
+    "AWS Identity and Access Management (IAM).",
+    "Amazon Redshift.",
+  ],
+  options_zh:[
+    "AWS Key Management System (AWS KMS)。",
+    "Amazon EMR。",
+    "AWS Identity and Access Management (IAM)。",
+    "Amazon Redshift。",
+  ],
+  answer:[2]
+},
+{
+  n:392,
+  type:"single",
+  q_en:"A company wants to implement a single environment for both data and AI development. Developers across different teams must be able to access the environment and work together. The developers must be able to build and share models and generative AI applications securely in the environment. Which AWS solution will meet these requirements?",
+  q_zh:"一家公司想要實作一個同時用於資料和 AI 開發的單一環境。不同團隊的開發人員必須能夠存取該環 境並共同作業。開發人員必須能夠在該環境中安全地建置和共用模型與生成式 AI 應用程式。哪個 A WS 解決方案符合這些需求？",
+  options_en:[
+    "Amazon Lex.",
+    "Amazon SageMaker Unified Studio.",
+    "Amazon Bedrock PartyRock.",
+    "Amazon Q Developer.",
+  ],
+  options_zh:[
+    "Amazon Lex。",
+    "Amazon SageMaker Unified Studio。",
+    "Amazon Bedrock PartyRock。",
+    "Amazon Q Developer。",
+  ],
+  answer:[1]
+},
+{
+  n:393,
+  type:"single",
+  q_en:"A company deploys a foundation model (FM). The company notices that the FM is producing answers to user-submitted questions about politics. The company wants to ensure that the model does not send answers to political questions to users. Which AWS solution will meet this requirement?",
+  q_zh:"一家公司部署了一個基礎模型 (FM)。公司注意到該 FM 正在針對使用者提交的政治相關問題產生答 案。公司想要確保模型不會將政治問題的答案傳送給使用者。哪個 AWS 解決方案符合此需求？",
+  options_en:[
+    "Amazon Bedrock Guardrails.",
+    "Amazon Bedrock Agents.",
+    "Amazon SageMaker Clarify.",
+    "Amazon SageMaker Model Monitor.",
+  ],
+  options_zh:[
+    "Amazon Bedrock Guardrails。",
+    "Amazon Bedrock Agents。",
+    "Amazon SageMaker Clarify。",
+    "Amazon SageMaker Model Monitor。",
+  ],
+  answer:[0]
+},
+{
+  n:395,
+  type:"single",
+  q_en:"Which AWS service creates business intelligence reports and automatically generates executive summaries based on data that users provide?",
+  q_zh:"哪項 AWS 服務會建立商業智慧報告，並根據使用者提供的資料自動產生高階主管摘要？",
+  options_en:[
+    "Amazon Q in QuickSight.",
+    "Amazon Rekognition.",
+    "Amazon Textract.",
+    "Amazon Polly.",
+  ],
+  options_zh:[
+    "Amazon Q in QuickSight。",
+    "Amazon Rekognition。",
+    "Amazon Textract。",
+    "Amazon Polly。",
+  ],
+  answer:[0]
+},
+{
+  n:404,
+  type:"single",
+  q_en:"A company wants to detect unauthorized API actions for foundation models (FMs) in Amazon Bedrock. Which solution meets these requirements?",
+  q_zh:"一家公司想要偵測 Amazon Bedrock 中基礎模型 (FMs) 的未授權 API 動作。哪個解決方案符合這些 需求？",
+  options_en:[
+    "Configure AWS CloudTrail to monitor API activity.",
+    "Use AWS Trusted Advisor to monitor model input and output data.",
+    "Create Amazon QuickSight dashboards to monitor row-level safety.",
+    "Monitor user access by using Amazon Personalize.",
+  ],
+  options_zh:[
+    "設定 AWS CloudTrail 以監控 API 活動。",
+    "使用 AWS Trusted Advisor 監控模型輸入和輸出資料。",
+    "建立 Amazon QuickSight 儀表板以監控列層級安全性。",
+    "使用 Amazon Personalize 監控使用者存取。",
+  ],
+  answer:[0]
+},
+];
+const LETTERS=["A","B","C","D","E","F"];
+const EXAM_SIZE=65;
+const EXAM_SECONDS=90*60;
+
+let state="start"; // start | quiz | results
+let sessionQuestions=[];   // the 65 (or fewer) questions drawn for this attempt
+let current=0;
+let answers=[];            // array of arrays, one selected-index-set per question
+let remainingSeconds=EXAM_SECONDS;
+let timerInterval=null;
+let pendingSubmitConfirm=false;
+let jumpDrawerOpen=false;
+let lang="zh"; // "zh" | "en"
+
+const UI = {
+  zh: {
+    appTitle: "AWS <span>AIF-C01</span> 模擬考",
+    startHeading: "準備開始測驗",
+    startDesc: "選擇要複習的題號範圍，將從該範圍中隨機抽取題目，包含單選與複選題。點擊開始後即會啟動倒數計時。",
+    reviewRange: "複習範圍",
+    metaCount: "題目數量", metaTime: "考試時間（分鐘）", metaPass: "及格分數",
+    startBtn: "開始測驗",
+    footnote: "題庫來源：Examtopics　版本：AIF-C01",
+    progress: (cur,total,answered)=>`第 ${cur} / ${total} 題　已作答 ${answered}`,
+    qnum: (n)=>`問題 #${n}`,
+    multihint: (cnt)=>`此題為複選題，請選擇所有正確答案（共 ${cnt} 個）`,
+    prev:"← 上一題", next:"下一題 →", submit:"交卷", submitConfirm:"確定交卷",
+    warn:(n)=>`還有 ${n} 題未作答，再按一次「確定交卷」即會送出。`, cancel:"取消",
+    resultsTitle:"成績結果",
+    scoreSub:(c,t,time)=>`答對 ${c} / ${t} 題　剩餘時間：${time}`,
+    restart:"重新測驗",
+    notEnough:(n)=>`此範圍僅有 ${n} 題，本次測驗將使用全部 ${n} 題（未達65題標準配置）。`,
+    reviewCorrect:"答對", reviewWrong:"答錯", reviewMulti:"（複選）", notAnswered:"未作答",
+    fullBank:(max)=>`全部題庫 (1-${max})`, rangeLabel:(a,b)=>`第 ${a}-${b} 題`,
+  },
+  en: {
+    appTitle: "AWS <span>AIF-C01</span> Practice Exam",
+    startHeading: "Ready to start",
+    startDesc: "Choose a question-number range to review. Questions are drawn at random from that range, including single- and multi-select. The countdown starts once you begin.",
+    reviewRange: "Review Range",
+    metaCount: "Questions", metaTime: "Time (min)", metaPass: "Passing Score",
+    startBtn: "Start Exam",
+    footnote: "Source: Examtopics　Version: AIF-C01",
+    progress: (cur,total,answered)=>`Question ${cur} / ${total}　Answered ${answered}`,
+    qnum: (n)=>`Question #${n}`,
+    multihint: (cnt)=>`Multi-select — choose all correct answers (${cnt} total)`,
+    prev:"← Previous", next:"Next →", submit:"Submit", submitConfirm:"Confirm Submit",
+    warn:(n)=>`${n} question(s) unanswered. Press "Confirm Submit" again to submit anyway.`, cancel:"Cancel",
+    resultsTitle:"Results",
+    scoreSub:(c,t,time)=>`${c} / ${t} correct　Time left: ${time}`,
+    restart:"Retake Exam",
+    notEnough:(n)=>`Only ${n} questions in this range. This session will use all ${n} (fewer than the standard 65).`,
+    reviewCorrect:"Correct", reviewWrong:"Incorrect", reviewMulti:" (multi-select)", notAnswered:"Not answered",
+    fullBank:(max)=>`Full bank (1-${max})`, rangeLabel:(a,b)=>`Q${a}-${b}`,
+  }
+};
+function t(){ return UI[lang]; }
+function setLang(l){ lang=l; render(); }
+function langToggleHtml(){
+  return `<div class="langtoggle">
+    <button class="${lang==='zh'?'active':''}" onclick="setLang('zh')">中文</button>
+    <button class="${lang==='en'?'active':''}" onclick="setLang('en')">EN</button>
+  </div>`;
+}
+function qStem(q){ return lang==='zh' ? q.q_zh : q.q_en; }
+function qOptions(q){ return lang==='zh' ? q.options_zh : q.options_en; }
+
+// ---- range selection for targeted review ----
+const MAX_N=Math.max(...QUESTIONS.map(q=>q.n));
+const RANGE_SIZE=100;
+const RANGES=[{min:1, max:MAX_N, full:true}];
+for(let start=1; start<=MAX_N; start+=RANGE_SIZE){
+  const end=Math.min(start+RANGE_SIZE-1, MAX_N);
+  RANGES.push({min:start, max:end, full:false});
+}
+function rangeLabel(r){ return r.full ? t().fullBank(r.max) : t().rangeLabel(r.min, r.max); }
+let selectedRangeIndex=0;
+
+function poolForRange(idx){
+  const r=RANGES[idx];
+  return QUESTIONS.filter(q=>q.n>=r.min && q.n<=r.max);
+}
+
+function shuffle(arr){
+  const a=arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function formatTime(s){
+  const m=Math.floor(s/60);
+  const sec=s%60;
+  return String(m).padStart(2,"0")+":"+String(sec).padStart(2,"0");
+}
+
+function render(){
+  const app=document.getElementById('app');
+  document.body.classList.toggle('quiz-mode', state==="quiz");
+  if(state==="start"){
+    app.innerHTML=renderStart();
+  }else if(state==="quiz"){
+    app.innerHTML=renderQuiz();
+  }else{
+    app.innerHTML=renderResults();
+  }
+}
+
+function renderStart(){
+  const pool=poolForRange(selectedRangeIndex);
+  const count=Math.min(EXAM_SIZE,pool.length);
+  const note = pool.length < EXAM_SIZE
+    ? `<p style="color:var(--orange);">${t().notEnough(pool.length)}</p>`
+    : "";
+  let optionsHtml="";
+  RANGES.forEach((r,i)=>{
+    optionsHtml+=`<option value="${i}" ${i===selectedRangeIndex?"selected":""}>${rangeLabel(r)}</option>`;
+  });
+  return `
+    <header>
+      <div class="headtop">
+        <h1>${t().appTitle}</h1>
+        ${langToggleHtml()}
+      </div>
+    </header>
+    <div class="start-card">
+      <h2>${t().startHeading}</h2>
+      <p>${t().startDesc}</p>
+      <div class="rangepick">
+        <label for="rangeSelect">${t().reviewRange}</label>
+        <select id="rangeSelect" onchange="onRangeChange(this.value)">${optionsHtml}</select>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-box"><div class="mnum">${count}</div><div class="mlabel">${t().metaCount}</div></div>
+        <div class="meta-box"><div class="mnum">90</div><div class="mlabel">${t().metaTime}</div></div>
+        <div class="meta-box"><div class="mnum">700</div><div class="mlabel">${t().metaPass}</div></div>
+      </div>
+      ${note}
+      <button class="btn-primary" onclick="startExam()">${t().startBtn}</button>
+    </div>
+    <div class="footnote">${t().footnote}</div>
+  `;
+}
+
+function onRangeChange(val){
+  selectedRangeIndex=parseInt(val,10);
+  render();
+}
+
+function startExam(){
+  const pool=poolForRange(selectedRangeIndex);
+  const count=Math.min(EXAM_SIZE,pool.length);
+  sessionQuestions=shuffle(pool).slice(0,count);
+  answers=sessionQuestions.map(()=>[]);
+  current=0;
+  remainingSeconds=EXAM_SECONDS;
+  jumpDrawerOpen=false;
+  state="quiz";
+  render();
+  window.scrollTo(0,0);
+  startTimer();
+}
+
+function startTimer(){
+  if(timerInterval) clearInterval(timerInterval);
+  timerInterval=setInterval(()=>{
+    remainingSeconds--;
+    if(remainingSeconds<=0){
+      remainingSeconds=0;
+      clearInterval(timerInterval);
+      updateTimerDom();
+      submitQuiz();
+      return;
+    }
+    updateTimerDom();
+  },1000);
+}
+
+function updateTimerDom(){
+  const el=document.getElementById('timer');
+  if(!el) return;
+  el.textContent=formatTime(remainingSeconds);
+  if(remainingSeconds<=300) el.classList.add('low');
+}
+
+function renderQuiz(){
+  const q=sessionQuestions[current];
+  const pct=Math.round(((current+1)/sessionQuestions.length)*100);
+  const isMulti=q.type==="multi";
+  const selected=answers[current];
+  const opts=qOptions(q);
+
+  let optsHtml="";
+  opts.forEach((opt,i)=>{
+    const sel=selected.includes(i)?"selected":"";
+    const tagCls=isMulti?"tag":"tag round";
+    optsHtml+=`<div class="opt ${sel}" onclick="selectAnswer(${i})">
+      <div class="${tagCls}">${LETTERS[i]}</div>
+      <div>${opt}</div>
+    </div>`;
+  });
+
+  let jumpHtml="";
+  sessionQuestions.forEach((qq,i)=>{
+    let cls="";
+    if(i===current) cls="current";
+    else if(answers[i].length>0) cls="answered";
+    jumpHtml+=`<button class="${cls}" onclick="goTo(${i})">${i+1}</button>`;
+  });
+
+  const answeredCount=answers.filter(a=>a.length>0).length;
+  const unansweredCount=sessionQuestions.length-answeredCount;
+
+  const warnHtml = pendingSubmitConfirm
+    ? `<div class="submitwarn">${t().warn(unansweredCount)}<button class="linklike" onclick="cancelSubmit()">${t().cancel}</button></div>`
+    : "";
+
+  const drawerHtml = jumpDrawerOpen ? `
+    <div class="jumpdrawer-backdrop" onclick="toggleJumpDrawer()">
+      <div class="jumpdrawer" onclick="event.stopPropagation()">
+        <div class="jumpdrawer-head">
+          <span>${t().reviewRange}</span>
+          <button class="linklike" onclick="toggleJumpDrawer()">${t().cancel}</button>
+        </div>
+        <div class="jumpgrid">${jumpHtml}</div>
+      </div>
+    </div>` : "";
+
+  return `
+    <div class="quiz-top">
+      <header>
+        <div class="headtop">
+          <h1>${t().appTitle}</h1>
+          ${langToggleHtml()}
+          <div class="timer" id="timer">${formatTime(remainingSeconds)}</div>
+        </div>
+        <div class="progress">
+          <span>${t().progress(current+1, sessionQuestions.length, answeredCount)}</span>
+          <button class="jumpbtn" onclick="toggleJumpDrawer()">#${current+1}</button>
+        </div>
+      </header>
+      <div class="track"><div class="track-fill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="quiz-scroll">
+      <div class="qcard">
+        <div class="qnum">${t().qnum(q.n)}</div>
+        <div class="qtext">${qStem(q)}</div>
+        ${isMulti?`<div class="multihint">${t().multihint(q.answer.length)}</div>`:""}
+        <div class="options">${optsHtml}</div>
+      </div>
+    </div>
+    <div class="quiz-bottom">
+      ${warnHtml}
+      <div class="navrow">
+        <div class="left">
+          <button onclick="prevQ()" ${current===0?"disabled":""}>${t().prev}</button>
+          <button onclick="nextQ()" ${current===sessionQuestions.length-1?"disabled":""}>${t().next}</button>
+        </div>
+        <div class="right">
+          <button class="btn-primary" onclick="confirmSubmit()">${pendingSubmitConfirm?t().submitConfirm:t().submit}</button>
+        </div>
+      </div>
+    </div>
+    ${drawerHtml}
+  `;
+}
+
+function arraysEqualAsSets(a,b){
+  if(a.length!==b.length) return false;
+  const sa=[...a].sort();
+  const sb=[...b].sort();
+  return sa.every((v,i)=>v===sb[i]);
+}
+
+function renderResults(){
+  let correctCount=0;
+  sessionQuestions.forEach((q,i)=>{ if(arraysEqualAsSets(answers[i],q.answer)) correctCount++; });
+  const total=sessionQuestions.length;
+  const pct=Math.round((correctCount/total)*100);
+
+  let reviewHtml="";
+  sessionQuestions.forEach((q,i)=>{
+    const userAns=answers[i];
+    const isCorrect=arraysEqualAsSets(userAns,q.answer);
+    const opts=qOptions(q);
+    let optsHtml="";
+    opts.forEach((opt,j)=>{
+      let cls="";
+      if(q.answer.includes(j)) cls="correct";
+      else if(userAns.includes(j)) cls="wrong";
+      if(cls) optsHtml+=`<div class="ropt ${cls}">${LETTERS[j]}. ${opt}</div>`;
+    });
+    if(userAns.length===0){
+      optsHtml=`<div class="ropt wrong">${t().notAnswered}</div>`+optsHtml;
+    }
+    reviewHtml+=`<div class="review-item">
+      <div class="rhead ${isCorrect?'correct':'wrong'}">${t().qnum(q.n)} — ${isCorrect?t().reviewCorrect:t().reviewWrong}${q.type==="multi"?t().reviewMulti:""}</div>
+      <div class="rq">${qStem(q)}</div>
+      ${optsHtml}
+    </div>`;
+  });
+
+  return `
+    <header>
+      <div class="headtop">
+        <h1>${t().appTitle}</h1>
+        ${langToggleHtml()}
+      </div>
+      <div class="progress">${t().resultsTitle}</div>
+    </header>
+    <div class="results">
+      <div class="score-num">${pct}<span style="font-size:22px;">%</span></div>
+      <div class="score-sub">${t().scoreSub(correctCount, total, formatTime(remainingSeconds))}</div>
+      <div class="score-bar"><div class="score-bar-fill" style="width:${pct}%"></div></div>
+      <button class="btn-primary restart" onclick="restart()">${t().restart}</button>
+    </div>
+    <div class="reviewlist">${reviewHtml}</div>
+  `;
+}
+
+function selectAnswer(i){
+  const q=sessionQuestions[current];
+  const sel=answers[current];
+  if(q.type==="multi"){
+    const idx=sel.indexOf(i);
+    if(idx>-1) sel.splice(idx,1);
+    else sel.push(i);
+  }else{
+    answers[current]=[i];
+  }
+  pendingSubmitConfirm=false;
+  const scrollY=window.scrollY;
+  render();
+  window.scrollTo(0,scrollY);
+}
+function prevQ(){ if(current>0){current--; pendingSubmitConfirm=false; render();} }
+function nextQ(){ if(current<sessionQuestions.length-1){current++; pendingSubmitConfirm=false; render();} }
+function goTo(i){ current=i; pendingSubmitConfirm=false; jumpDrawerOpen=false; render(); }
+function cancelSubmit(){ pendingSubmitConfirm=false; render(); }
+function toggleJumpDrawer(){ jumpDrawerOpen=!jumpDrawerOpen; render(); }
+function confirmSubmit(){
+  const unanswered=answers.filter(a=>a.length===0).length;
+  if(unanswered>0 && !pendingSubmitConfirm){
+    pendingSubmitConfirm=true;
+    render();
+    return;
+  }
+  pendingSubmitConfirm=false;
+  submitQuiz();
+}
+function submitQuiz(){
+  if(timerInterval) clearInterval(timerInterval);
+  pendingSubmitConfirm=false;
+  state="results";
+  render();
+  window.scrollTo(0,0);
+}
+function restart(){
+  if(timerInterval) clearInterval(timerInterval);
+  pendingSubmitConfirm=false;
+  state="start";
+  render();
+  window.scrollTo(0,0);
+}
+
+render();
+</script>
+</body>
+</html>

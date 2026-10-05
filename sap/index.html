@@ -327,6 +327,32 @@
   }
   .rangepick select:focus{outline:none;border-color:var(--orange);}
 
+  .history-section{
+    text-align:left;margin-top:26px;padding-top:22px;border-top:1px solid var(--panel-border);
+  }
+  .history-head{
+    display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;
+  }
+  .history-head h3{margin:0;font-size:14px;font-weight:600;color:var(--text);}
+  .history-clear{
+    background:none;border:none;color:var(--text-dim);font-size:12px;cursor:pointer;text-decoration:underline;padding:0;
+  }
+  .history-clear:hover{color:var(--orange);}
+  .history-empty{color:var(--text-dim);font-size:13px;}
+  .history-list{display:flex;flex-direction:column;gap:8px;max-height:280px;overflow-y:auto;}
+  .history-row{
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+    background:#1c1c1f;border:1px solid var(--panel-border);border-radius:8px;padding:10px 14px;font-size:13px;
+  }
+  .history-row .h-date{color:var(--text-dim);}
+  .history-row .h-score{font-weight:700;color:var(--orange);}
+  .history-row .h-wrong{color:var(--text-dim);font-size:12px;}
+  .history-review-btn{
+    flex-shrink:0;background:none;border:1px solid var(--orange-dim);color:var(--orange);
+    border-radius:6px;padding:7px 12px;font-size:12px;font-weight:600;cursor:pointer;
+  }
+  .history-review-btn:hover{background:var(--orange);border-color:var(--orange);color:#1a1000;}
+
 /* ===== 手機專用排版（窄螢幕加大字級與觸控範圍） ===== */
 @media (max-width: 700px){
   body{ padding-left:calc(12px + env(safe-area-inset-left)); padding-right:calc(12px + env(safe-area-inset-right)); }
@@ -366,6 +392,9 @@
   .meta-box{ padding:16px 8px; }
   .meta-box .mnum{ font-size:24px; }
   .meta-box .mlabel{ font-size:13px; }
+  .history-row{ font-size:14px; padding:12px 14px; }
+  .history-row .h-wrong{ font-size:13px; }
+  .history-review-btn{ font-size:13px; padding:9px 14px; }
 
   .results{ padding:28px 20px; }
   .score-num{ font-size:60px; }
@@ -10743,6 +10772,7 @@ const QUESTIONS = [
 const LETTERS=["A","B","C","D","E","F"];
 const EXAM_SIZE=75;
 const EXAM_SECONDS=180*60;
+const HISTORY_KEY="sap_exam_history_full";
 
 let state="start"; // start | quiz | results
 let sessionQuestions=[];   // the 65 (or fewer) questions drawn for this attempt
@@ -10774,6 +10804,13 @@ const UI = {
     notEnough:(n)=>`此範圍僅有 ${n} 題，本次測驗將使用全部 ${n} 題（未達65題標準配置）。`,
     reviewCorrect:"答對", reviewWrong:"答錯", reviewMulti:"（複選）", notAnswered:"未作答",
     fullBank:(max)=>`全部題庫 (1-${max})`, rangeLabel:(a,b)=>`第 ${a}-${b} 題`,
+    historyTitle:"考試紀錄", historyEmpty:"尚無測驗紀錄", historyClear:"清除紀錄",
+    historyClearConfirm:"確定要清除所有測驗紀錄嗎？此動作無法復原。",
+    historyWrong:(n)=>`錯 ${n} 題`,
+    historyReview:"複習錯題", backToStart:"回到首頁",
+    historyReviewSub:(c,t)=>`答對 ${c} / ${t} 題　以下為本次測驗答錯的題目`,
+    historyAllCorrect:"本次測驗全部答對，沒有錯題！",
+    historyNoDetail:"此紀錄為舊版資料，未保存題目明細。",
   },
   en: {
     appTitle: "AWS <span>SAP-C02</span> Practice Exam",
@@ -10794,6 +10831,13 @@ const UI = {
     notEnough:(n)=>`Only ${n} questions in this range. This session will use all ${n} (fewer than the standard 65).`,
     reviewCorrect:"Correct", reviewWrong:"Incorrect", reviewMulti:" (multi-select)", notAnswered:"Not answered",
     fullBank:(max)=>`Full bank (1-${max})`, rangeLabel:(a,b)=>`Q${a}-${b}`,
+    historyTitle:"Exam History", historyEmpty:"No exam records yet", historyClear:"Clear History",
+    historyClearConfirm:"Clear all exam history? This cannot be undone.",
+    historyWrong:(n)=>`${n} wrong`,
+    historyReview:"Review misses", backToStart:"Back to Start",
+    historyReviewSub:(c,t)=>`${c} / ${t} correct　Questions you missed in this attempt:`,
+    historyAllCorrect:"All correct on this attempt — nothing to review!",
+    historyNoDetail:"This record predates detailed tracking, no per-question data saved.",
   }
 };
 function t(){ return UI[lang]; }
@@ -10838,6 +10882,126 @@ function formatTime(s){
   return String(m).padStart(2,"0")+":"+String(sec).padStart(2,"0");
 }
 
+function loadHistory(){
+  try{
+    const raw=localStorage.getItem(HISTORY_KEY);
+    return raw ? JSON.parse(raw) : [];
+  }catch(e){ return []; }
+}
+
+function saveHistoryRecord(rec){
+  try{
+    const list=loadHistory();
+    list.unshift(rec);
+    if(list.length>50) list.length=50;
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(list));
+  }catch(e){}
+}
+
+function clearHistory(){
+  if(!confirm(t().historyClearConfirm)) return;
+  try{ localStorage.removeItem(HISTORY_KEY); }catch(e){}
+  render();
+}
+
+function historySectionHtml(){
+  const hist=loadHistory();
+  const body = hist.length===0
+    ? `<div class="history-empty">${t().historyEmpty}</div>`
+    : `<div class="history-list">${hist.map((r,idx)=>{
+        const d=new Date(r.date);
+        const dateStr=isNaN(d) ? "" : d.toLocaleString(lang==='zh'?'zh-TW':'en-US',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+        return `<div class="history-row">
+          <div class="h-info">
+            <div class="h-date">${dateStr}</div>
+            <div class="h-score">${r.correct}/${r.total} (${r.pct}%)</div>
+            <div class="h-wrong">${t().historyWrong(r.wrong)}</div>
+          </div>
+          <button class="history-review-btn" onclick="openHistoryReview(${idx})">${t().historyReview}</button>
+        </div>`;
+      }).join("")}</div>`;
+  return `
+    <div class="history-section">
+      <div class="history-head">
+        <h3>${t().historyTitle}</h3>
+        ${hist.length>0 ? `<button class="history-clear" onclick="clearHistory()">${t().historyClear}</button>` : ""}
+      </div>
+      ${body}
+    </div>
+  `;
+}
+
+let historyReviewIndex=null;
+
+function openHistoryReview(idx){
+  historyReviewIndex=idx;
+  state="history";
+  render();
+  window.scrollTo(0,0);
+}
+
+function closeHistoryReview(){
+  historyReviewIndex=null;
+  state="start";
+  render();
+  window.scrollTo(0,0);
+}
+
+function renderHistoryReview(){
+  const hist=loadHistory();
+  const record=hist[historyReviewIndex];
+  if(!record){
+    state="start";
+    return renderStart();
+  }
+  const items=record.items||[];
+  let reviewHtml="";
+  items.forEach(item=>{
+    const q=QUESTIONS.find(qq=>qq.n===item.n);
+    if(!q) return;
+    const sel=item.sel||[];
+    const isCorrect=arraysEqualAsSets(sel, q.answer);
+    if(isCorrect) return;
+    const opts=qOptions(q);
+    let optsHtml="";
+    opts.forEach((opt,j)=>{
+      let cls="";
+      if(q.answer.includes(j)) cls="correct";
+      else if(sel.includes(j)) cls="wrong";
+      if(cls) optsHtml+=`<div class="ropt ${cls}">${LETTERS[j]}. ${opt}</div>`;
+    });
+    if(sel.length===0){
+      optsHtml=`<div class="ropt wrong">${t().notAnswered}</div>`+optsHtml;
+    }
+    reviewHtml+=`<div class="review-item">
+      <div class="rhead wrong">${t().qnum(q.n)} — ${t().reviewWrong}${q.type==="multi"?t().reviewMulti:""}</div>
+      <div class="rq">${qStem(q)}</div>
+      ${optsHtml}
+    </div>`;
+  });
+  if(!record.items){
+    reviewHtml=`<div class="history-empty">${t().historyNoDetail}</div>`;
+  }else if(reviewHtml===""){
+    reviewHtml=`<div class="history-empty">${t().historyAllCorrect}</div>`;
+  }
+  const d=new Date(record.date);
+  const dateStr=isNaN(d) ? "" : d.toLocaleString(lang==='zh'?'zh-TW':'en-US',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
+  return `
+    <header>
+      <div class="headtop">
+        <h1>${t().appTitle}</h1>
+        ${langToggleHtml()}
+      </div>
+      <div class="progress">${dateStr}</div>
+    </header>
+    <div class="results">
+      <div class="score-sub">${t().historyReviewSub(record.correct, record.total)}</div>
+      <button class="btn-primary restart" onclick="closeHistoryReview()">${t().backToStart}</button>
+    </div>
+    <div class="reviewlist">${reviewHtml}</div>
+  `;
+}
+
 function render(){
   const app=document.getElementById('app');
   document.body.classList.toggle('quiz-mode', state==="quiz");
@@ -10845,6 +11009,8 @@ function render(){
     app.innerHTML=renderStart();
   }else if(state==="quiz"){
     app.innerHTML=renderQuiz();
+  }else if(state==="history"){
+    app.innerHTML=renderHistoryReview();
   }else{
     app.innerHTML=renderResults();
   }
@@ -10881,6 +11047,7 @@ function renderStart(){
       </div>
       ${note}
       <button class="btn-primary" onclick="startExam()">${t().startBtn}</button>
+      ${historySectionHtml()}
     </div>
     <div class="footnote">${t().footnote}</div>
   `;
@@ -11095,6 +11262,18 @@ function confirmSubmit(){
 function submitQuiz(){
   if(timerInterval) clearInterval(timerInterval);
   pendingSubmitConfirm=false;
+  const total=sessionQuestions.length;
+  let correctCount=0;
+  sessionQuestions.forEach((q,i)=>{ if(arraysEqualAsSets(answers[i],q.answer)) correctCount++; });
+  saveHistoryRecord({
+    date:new Date().toISOString(),
+    total,
+    correct:correctCount,
+    wrong:total-correctCount,
+    pct:Math.round((correctCount/total)*100),
+    timeUsedSec:EXAM_SECONDS-remainingSeconds,
+    items:sessionQuestions.map((q,i)=>({n:q.n, sel:answers[i]})),
+  });
   state="results";
   render();
   window.scrollTo(0,0);
